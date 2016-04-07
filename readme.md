@@ -71,12 +71,12 @@ will create the following folders/files
 
 ```
 client/
-    |   |- app/
-    |   |   |- routes/
-    |   |   |   |- layout-public/
-    |   |   |   |   |- home/
-    |   |   |   |   |   |- home.route.ts
-    |   |   |   |   |   |- home.template.html
+    |- app/
+    |   |- routes/
+    |   |   |- layout-public/
+    |   |   |   |- home/
+    |   |   |   |   |- home.route.ts
+    |   |   |   |   |- home.template.html
 ```
 ## TODO
 - Add options to create other features
