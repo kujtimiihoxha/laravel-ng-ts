@@ -28,11 +28,17 @@ after both tasks are running go to
 http://localhost:8000
 ```
 ## Folder Structure 
+
 #### Backend
+
 - The backend folder structure is the same as the standard laravel folder structure.
+
 #### Frontend
+
 - All the frontend files are in the  ```client/``` , ```gulp``` and ```theme``` folders.
+
 ##### Client folder :
+
 ```
 client/
     |- app/                                      --> source code folder
