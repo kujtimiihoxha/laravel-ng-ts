@@ -1,6 +1,6 @@
 Laravel Angular Typescript starter.
 
-**WORK IN PROGRESS!!**
+**WORK IN PROGRESS!!!**
 ## Installation
 ``` bash
 npm install -g yo
