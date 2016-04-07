@@ -33,11 +33,12 @@ module App {
             angular.module("app.services").service(options.serviceName, target);
         };
     }
-
-    export  function Filter(filter: any): any {
+    export interface IFilterOptions {
+        filterName: string
+    }
+    export  function Filter(filter: IFilterOptions): any {
         "use strict";
         return (target: any) => {
-            filter = filter ? filter : {};
             if (!filter.filterName) {
                 throw new Error("@Filter() must contains filterName property!");
             }
@@ -57,7 +58,10 @@ module App {
             }
         };
     }
-    export function Component(component: angular.IComponentOptions | any): any {
+    export interface IComponentOptions extends angular.IComponentOptions {
+        selector: string;
+    }
+    export function Component(component: IComponentOptions): any {
         "use strict";
         return (target: any) => {
             const selector = dashCaseToCamelCase(component.selector);
@@ -91,8 +95,10 @@ module App {
             }
         };
     }
-
-    export function Directive(options: any): any {
+    export interface IDirectiveOptions extends angular.IDirective {
+        selector: string;
+    }
+    export function Directive(options: IDirectiveOptions): any {
         "use strict";
         return (target: any) => {
 
@@ -104,6 +110,7 @@ module App {
                 throw new Error("@Directive() mus have only template or templateUrl not both!");
             }
             if (options.template) {
+                //noinspection JSDeprecatedSymbols
                 const opt = {
                     template: options.template,
                     controller: target,
@@ -118,8 +125,9 @@ module App {
             }
             console.log(target.link);
             if (options.templateUrl) {
+                //noinspection JSDeprecatedSymbols
                 const opt = {
-                    templateUrl: options.templateUrl,   
+                    templateUrl: options.templateUrl,
                     controller: target,
                     controllerAs: "vm2",
                     scope: options.scope,
@@ -130,7 +138,7 @@ module App {
                 angular.extend(opt, options);
                 angular.module("app.directives").directive(selector, () => opt);
             }
-        
+
         };
     }
 
@@ -151,7 +159,7 @@ module App {
                 name: options.name,
                 module: "app",
                 tests: target.tests
-            }
+            };
             angular.extend(opt, options);
             ngDescribe(opt);
         }
