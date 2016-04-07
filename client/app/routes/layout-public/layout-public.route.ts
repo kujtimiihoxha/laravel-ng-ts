@@ -1,6 +1,6 @@
 module App.Routes.LayoutPublic {
-    import AccessLevels = Core.Constants.AccessLevels;
-    import Service = Core.Services.IAuthService;
+    import AccessLevels = App.Core.Constants.AccessLevels;
+    import Service = App.Core.Services.IAuthService;
 
     @RouteConfig("public", {
             url: "/",

@@ -1,5 +1,5 @@
 module App.Core.Models {
-    import IBaseResource = Core.Resources.IBaseResource;
+    import IBaseResource = App.Core.Resources.IBaseResource;
     import IPromise = restangular.IPromise;
     import ICollectionPromise = restangular.ICollectionPromise;
     export interface IBaseModel<T> {

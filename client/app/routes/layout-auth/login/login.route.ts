@@ -1,5 +1,5 @@
 module App.Routes.LayoutAuth.Login {
-    import AccessLevels = Core.Constants.AccessLevels;
+    import AccessLevels = App.Core.Constants.AccessLevels;
     @RouteConfig("auth.login", {
             url: "/auth/login",
             data: {

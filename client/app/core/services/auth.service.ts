@@ -1,8 +1,8 @@
 module App.Core.Services {
     import IPromise = restangular.IPromise;
-    import IAuthModule = Core.Models.AuthModel;
-    import ITokenModel = Core.Models.ITokenModel;
-    import UserRoles = Core.Constants.UserRoles;
+    import IAuthModule = App.Core.Models.AuthModel;
+    import ITokenModel = App.Core.Models.ITokenModel;
+    import UserRoles = App.Core.Constants.UserRoles;
 
     export interface IAuthService {
         login(user: IAuthModule.ILoginModel): IPromise<any>;

@@ -1,7 +1,6 @@
 /// <reference path="../../core/constants/constants.ts" />
-
 module App.Routes.LayoutError {
-    import AccessLevels = Core.Constants.AccessLevels;
+    import AccessLevels = App.Core.Constants.AccessLevels;
     @RouteConfig("403", {
         url: "/403",
         templateUrl: "./views/routes/layout-error/403.html",

@@ -1,5 +1,5 @@
 module App.Routes.LayoutAdmin.Home {
-    import AccessLevels = Core.Constants.AccessLevels;
+    import AccessLevels = App.Core.Constants.AccessLevels;
 
     @RouteConfig("admin.dashboard", {
         url: "/dashboard",

@@ -5,12 +5,12 @@ module App.Core.Services {
     })
     @Inject("Restangular", "$window", "$log")
     class ApiService {
-        constructor(restangular: IService, $window: any, $log: ng.ILogService) {
+        constructor(restAngular: IService, $window: angular.IWindowService, $log: ng.ILogService) {
             const headers = {
                 "Content-Type": "application/json",
                 "Accept": "application/x.laravel.v1+json"
             };
-            return restangular.withConfig((restangularConfigurer: any) => {
+            return restAngular.withConfig((restangularConfigurer: any) => {
                 restangularConfigurer
                     .setBaseUrl("/api/")
                     .setDefaultHeaders(headers)

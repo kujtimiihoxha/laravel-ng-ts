@@ -1,7 +1,7 @@
 module App.Core.Run {
     "use strict";
-    import IAuthService = Core.Services.IAuthService;
-    import AccessLevels = Core.Constants.AccessLevels;
+    import IAuthService = App.Core.Services.IAuthService;
+    import AccessLevels = App.Core.Constants.AccessLevels;
     class  CoreRun {
         @App.Run()
         @Inject( "$rootScope", "$state", "App.Core.Services.AuthService")
