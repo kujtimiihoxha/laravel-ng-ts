@@ -1,4 +1,9 @@
 {
+  "name": "laravel-ng-ts",
+  "author":"Kujtim Hoxha <kujtimii.h@gmail.com>",
+  "description": "Laravel angular typescript starter",
+  "license": "MIT",
+  "version": "0.0.1",
   "private": true,
   "devDependencies": {
     "angular-mocks": "^1.5.3",
