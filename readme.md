@@ -45,10 +45,10 @@ will create the following folders/files
 client/
     |- app/
     |   |- components/
-    |   |   |- my-custom-component/
-    |   |   |   |- my-custom-component.template.html
-    |   |   |   |- my-custom-component.component.ts
-    |   |   |   |- my-custom-component.scss
+    |   |   |- my-custom-component/                         --> component folder
+    |   |   |   |- my-custom-component.template.html        --> component html template
+    |   |   |   |- my-custom-component.component.ts         --> component configuration and controller 
+    |   |   |   |- my-custom-component.scss                 --> component style
 ```
 
 ## Create Routes
@@ -74,9 +74,9 @@ client/
     |- app/
     |   |- routes/
     |   |   |- layout-public/
-    |   |   |   |- home/
-    |   |   |   |   |- home.route.ts
-    |   |   |   |   |- home.template.html
+    |   |   |   |- home/                        -->route folder
+    |   |   |   |   |- home.route.ts            -->route configuration
+    |   |   |   |   |- home.template.html       -->route html template
 ```
 ## TODO
 - Add options to create other features
