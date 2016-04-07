@@ -3,10 +3,7 @@ module App.Routes.LayoutPublic {
     import Service = App.Core.Services.IAuthService;
 
     @RouteConfig("public", {
-            url: "/",
-            data: {
-                access: AccessLevels.public
-            },
+            abstract:true,
             templateUrl: "./views/routes/layout-public/layout-public.template.html"
         }
     )

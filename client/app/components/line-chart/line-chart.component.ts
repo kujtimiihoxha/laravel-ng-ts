@@ -39,7 +39,6 @@
         ]};
 
         constructor($element: any) {
-            console.log(this.chartModel);
             angular.extend(this, this.chartModel);
             $element.ready(() => {
                 var ctx = document.getElementById(this.chartModel.id)["getContext"]("2d");

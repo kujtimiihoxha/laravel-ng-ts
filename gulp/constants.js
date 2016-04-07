@@ -26,7 +26,7 @@ const constants = {
           `${paths.app.typescript}/**/*.+(module.ts)`,
           `${paths.app.typescript}/**/*.+(ts)`,
           'typings/main.d.ts',
-          'typings/app.d.ts'
+          'typings/custom.d.ts'
       ]
     }
 };
