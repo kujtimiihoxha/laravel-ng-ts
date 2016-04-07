@@ -13,7 +13,8 @@ cd my-project
 yo laravel-ng-ts
 ```
 ## Running the app
-Open two commandline  windows and in one run:
+Open two terminal windows and navigate to the folder where you 
+project is saved , than in one terminal window run:
 ```
 gulp && gulp watch
 ```
@@ -76,3 +77,12 @@ will create the following folders/files
 ---------------------->home.route.ts
 ---------------------->home.template.html
 ```
+## TODO
+- Add options to create other features
+    - Config
+    - Run
+    - Service
+    - Directive
+    - Model
+    - Resource
+ 
