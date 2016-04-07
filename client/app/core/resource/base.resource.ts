@@ -1,4 +1,4 @@
-/// <reference path="../../../../client/app/core/models/base-model.model.ts" />
+/// <reference path="../models/base.model.ts" />
 module App.Core.Resources {
     import IPromise = restangular.IPromise;
     import IService = restangular.IService;

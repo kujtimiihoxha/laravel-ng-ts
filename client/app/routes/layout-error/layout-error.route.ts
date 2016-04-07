@@ -1,4 +1,4 @@
-/// <reference path="../../core/constants/constants.ts" />
+/// <reference path="../../core/constants/core.constants.ts" />
 module App.Routes.LayoutError {
     import AccessLevels = App.Core.Constants.AccessLevels;
     @RouteConfig("403", {

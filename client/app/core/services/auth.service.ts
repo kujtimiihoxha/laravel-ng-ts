@@ -1,7 +1,6 @@
 module App.Core.Services {
     import IPromise = restangular.IPromise;
     import IAuthModule = App.Core.Models.AuthModel;
-    import ITokenModel = App.Core.Models.ITokenModel;
     import UserRoles = App.Core.Constants.UserRoles;
 
     export interface IAuthService {
@@ -15,9 +14,9 @@ module App.Core.Services {
     @Service({
         serviceName: "App.Core.Services.AuthService"
     })
-    @Inject("$auth", "App.Core.Models.TokenModel","$localStorage")
+    @Inject("$auth", "$localStorage")
     class AuthService implements IAuthService {
-        constructor(private $auth: any, private tokenModel: ITokenModel, private $localStorage: any) {}
+        constructor(private $auth: any, private $localStorage: any) {}
         login(user: IAuthModule.ILoginModel): IPromise<any> {
             const storage = this.$localStorage;
             return this.$auth.login(user).then((response: any) => {
@@ -34,7 +33,7 @@ module App.Core.Services {
             });
         }
         isAuthenticated(): boolean {
-            return !!this.tokenModel.get();
+            return !!this.$auth.getToken();
         }
         getCurrentUser(): any {
             if (this.$localStorage["user"] == null) {
