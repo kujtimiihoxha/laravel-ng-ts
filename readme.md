@@ -14,9 +14,9 @@ yo laravel-ng-ts
 ```
 
 ## Using laravel-ng-ts generators
-
 - To se how you can use the generator to auto-generate components, routes, etc. look at
  [kujtimiihoxha/generator-laravel-ng-ts](https://github.com/kujtimiihoxha/generator-laravel-ng-ts).
+
 ## Running the app
 Open two terminal windows and navigate to the folder where you 
 project is saved , than in one terminal window run:
