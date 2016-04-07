@@ -75,3 +75,8 @@ client/
     |- images/                                   -->images
 ```
 
+## Credits
+- Laravel angular material starter - [jadjoubran/laravel5-angular-material-starter](https://github.com/jadjoubran/laravel5-angular-material-starter)
+- Employee Scheduling UI - [martinmicunda/employee-scheduling-ui](https://github.com/martinmicunda/employee-scheduling-ui)
+## Licence
+MIT © [Kujtim Hoxha](kujtimhoxha.com)
