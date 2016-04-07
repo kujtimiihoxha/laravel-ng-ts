@@ -27,6 +27,7 @@ after both tasks are running go to
 ```
 http://localhost:8000
 ```
+## Folder Structure 
 
 ## Create Components
 ```
@@ -41,13 +42,13 @@ yo laravel-ng-ts my-custom-component
 
 will create the following folders/files
 ```
--->client
------->app
---------->components
-------------->my-custom-component
------------------->my-custom-component.template.html
------------------->my-custom-component.component.ts
------------------->my-custom-component.scss
+client/
+    |- app/
+    |   |- components/
+    |   |   |- my-custom-component/
+    |   |   |   |- my-custom-component.template.html
+    |   |   |   |- my-custom-component.component.ts
+    |   |   |   |- my-custom-component.scss
 ```
 
 ## Create Routes
@@ -69,13 +70,13 @@ yo laravel-ng-ts:route  public.home /home home /layout-public/
 will create the following folders/files
 
 ```
--->client
------->app
---------->routes
-------------->layout-public
------------------->home
----------------------->home.route.ts
----------------------->home.template.html
+client/
+    |   |- app/
+    |   |   |- routes/
+    |   |   |   |- layout-public/
+    |   |   |   |   |- home/
+    |   |   |   |   |   |- home.route.ts
+    |   |   |   |   |   |- home.template.html
 ```
 ## TODO
 - Add options to create other features
@@ -86,3 +87,4 @@ will create the following folders/files
     - Model
     - Resource
  
+## 
