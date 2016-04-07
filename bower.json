@@ -1,0 +1,41 @@
+{
+  "name": "laravel-ng-ts",
+  "authors": [
+    "Kujtim Hoxha <kujtimii.h@gmail.com>"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.5",
+    "angular-ui-router": "~0.2.15",
+    "angular-bootstrap": "~1.0.3",
+    "angular-cookies": "~1.5.0",
+    "ngstorage": "~0.3.3",
+    "restangular": "~1.5.2",
+    "angular-loading-bar": "~0.9.0",
+    "satellizer": "^0.14.0",
+    "font-awesome": "^4.5.0",
+    "Ionicons": "ionicons#^2.0.1",
+    "bootstrap": "^3.3.6",
+    "rdash-ui": "1.0.*",
+    "themestruck-harmony-admin": "./theme/"
+  },
+  "overrides": {
+    "font-awesome": {
+      "main": [
+        "css/font-awesome.css"
+      ]
+    },
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "dist/js/bootstrap.js"
+      ]
+    }
+  }
+}

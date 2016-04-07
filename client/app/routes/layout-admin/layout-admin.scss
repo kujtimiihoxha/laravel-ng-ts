@@ -1,0 +1,17 @@
+html,
+body,main {
+  min-height: 100%;
+}
+
+.layout-boxed html,
+.layout-boxed main {
+  height: 100%;
+}
+main {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Source Sans Pro', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  overflow-x: hidden;
+  overflow-y: auto;
+}

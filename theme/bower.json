@@ -1,0 +1,38 @@
+{
+  "name": "themestruck-harmony-admin",
+  "homepage": "https://github.com/theme-struck/themestruck-harmony-admin",
+  "authors": [
+    "ThemeStruck"
+  ],
+  "description": "Harmony - Free responsive Bootstrap admin template is a Responsive Admin Template, Dashboard template, or webapp UI starter theme.",
+  "main": [
+    "dist/css/awesome-bootstrap-checkbox.css",
+    "dist/css/bootstrap-select.css",
+    "dist/css/bootstrap-social.css",
+    "dist/css/datatables.min.css",
+    "dist/css/style.css",
+    "dist/js/bootstrap-select.min.js",
+    "dist/js/Chart.min.js",
+    "dist/js/chartData.js",
+    "dist/js/main.js"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "license": "Creative commons Attribution 3.0 License",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "font-awesome": "font-awsome#^4.5.0",
+    "datatables.net-bs": "^1.10.11",
+    "datatables.net": "^1.10.11",
+    "bootstrap-fileinput": "^4.3.1"
+  }
+}

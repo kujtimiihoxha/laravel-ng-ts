@@ -1,0 +1,18 @@
+<form ng-submit="vm.login()" class="mt">
+
+    <label for="" class="text-uppercase text-sm">Your Username or Email</label>
+    <input type="text" placeholder="Username" class="form-control mb" ng-model="vm.user.email" >
+
+    <label for="" class="text-uppercase text-sm">Password</label>
+    <input type="password" placeholder="Password" class="form-control mb" ng-model="vm.user.password">
+
+    <div class="checkbox checkbox-circle checkbox-info">
+        <input id="checkbox7" type="checkbox" checked>
+        <label for="checkbox7">
+            Keep me signed in
+        </label>
+    </div>
+
+    <button class="btn btn-primary btn-block" type="submit">LOGIN</button>
+
+</form>

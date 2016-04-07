@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true
+  }
+}

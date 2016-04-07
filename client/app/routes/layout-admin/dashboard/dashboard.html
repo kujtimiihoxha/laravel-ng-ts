@@ -1,0 +1,89 @@
+<div class="content-wrapper">
+    <div class="container-fluid">
+
+        <div class="row">
+            <div class="col-md-12">
+
+                <h2 class="page-title">Dashboard</h2>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-3" ng-repeat="panel in vm.panels">
+                                <panel panel-model="panel">
+                                    <panel-body>
+                                        <div class="stat-panel text-center">
+                                            <div class="stat-panel-number h1 ">{{panel.value}}</div>
+                                            <div class="stat-panel-title text-uppercase">{{panel.title}}</div>
+                                        </div>
+                                    </panel-body>
+                                    <panel-footer>
+                                            <a href="{{panel.link}}" class="block-anchor panel-footer text-center">{{panel.linkText}} <i class="fa fa-arrow-right"></i></a>
+                                    </panel-footer>
+                                </panel>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <line-chart chart-model="vm.lineChart"></line-chart>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">Recent Oreders</div>
+                            <div class="panel-body">
+                                <div class="alert alert-dismissible alert-success">
+                                    <button type="button" class="close" data-dismiss="alert"><i class="fa fa-close"></i></button>
+                                    <strong>Well done!</strong> You successfully read <a href="#" class="alert-link">this important alert message</a>.
+                                </div>
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>First Name</th>
+                                            <th>Last Name</th>
+                                            <th>Username</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mark</td>
+                                            <td>Otto</td>
+                                            <td>@mdo</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Jacob</td>
+                                            <td>Thornton</td>
+                                            <td>@fat</td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Larry</td>
+                                            <td>the Bird</td>
+                                            <td>@twitter</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <pie-chart chart-model="vm.pieChart"></pie-chart>
+                    </div>
+                    <div class="col-md-6">
+                        <doughnut-chart chart-model="vm.doughnutChart"></doughnut-chart>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,7 @@
+﻿
+<div class="panel panel-default">
+    <div class="panel-heading" ng-if="vm.panelHeading">{{vm.panelHeading}}</div>
+    <div class="panel-body" ng-class="vm.bodyClass" ng-transclude="body"></div>
+    <div ng-transclude="footer"></div>
+
+</div>

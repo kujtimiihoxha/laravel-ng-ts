@@ -1,0 +1,18 @@
+<div class="brand clearfix">
+    <a ui-sref="app.dashboard" class="logo"><img src="{{vm.brand.image || 'images/logo.jpg'}}" class="img-responsive" alt=""></a>
+    <span class="menu-btn"><i class="fa fa-bars"></i></span>
+    <ul class="ts-profile-nav">
+        <li ng-repeat="option in vm.header.options"><a ui-sref="option.state">option.title</a></li>
+        <!--<li><a href="#">Help</a></li>-->
+        <!--<li><a href="#">Settings</a></li>-->
+        <li class="ts-account">
+            <a><img src="{{vm.user.avatar || 'images/ts-avatar.jpg'}}" class="ts-avatar hidden-side" alt=""> {{vm.user.name}} <i class="fa fa-angle-down hidden-side"></i></a>
+            <ul>
+                <li ng-repeat="opt in vm.header.options.account"><a ui-sref="opt.state">opt.title</a></li>
+                <li><a href="#">My Account</a></li>
+                <li><a href="#">Edit Account</a></li>
+                <li><a ng-click="vm.logout()">Logout</a></li>
+            </ul>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,14 @@
+{
+  "name": "laravel-angular-typescript",
+  "version": false,
+  "dependencies": {},
+  "ambientDependencies": {
+    "angular": "registry:dt/angular#1.5.0+20160328125810",
+    "angular-ui-router": "registry:dt/angular-ui-router#1.1.5+20160317120654",
+    "es6-shim": "registry:dt/es6-shim#0.31.2+20160317120654",
+    "jasmine": "registry:dt/jasmine#2.2.0+20160317120654",
+    "jquery": "registry:dt/jquery#1.10.0+20160316155526",
+    "restangular": "registry:dt/restangular#1.4.0+20160317120654",
+    "ui-router-extras": "registry:dt/ui-router-extras#0.0.14+20160317120654"
+  }
+}
