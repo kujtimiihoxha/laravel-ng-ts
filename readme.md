@@ -68,9 +68,10 @@ after both tasks are running go to
 http://localhost:8000
 ```
 
-login with 
-
+login to dashboard 
 ```
+go to  http://localhost:8000/#/auth/login
+
 email: abc@gmail.com
 pass: abc@12345
 ```
