@@ -85,7 +85,7 @@ pass: abc@12345
 -  ```@Inject```
 -  ```@Run```         - to generate a run function use ```laravel-ng-ts:filter [run-name]```
 -  ```@Directive```   - it is recommended to use component, you can use directives similar to components. 
--  ```@Describe```    - to generate a filter function use ```laravel-ng-ts:describe [describe-name]```
+-  ```@Describe```    - to generate a unit tests use ```laravel-ng-ts:describe [describe-name]```
 
 To find out more about the generators see   [kujtimiihoxha/generator-laravel-ng-ts](https://github.com/kujtimiihoxha/generator-laravel-ng-ts).
 ## @Component()
