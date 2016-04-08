@@ -30,18 +30,34 @@ module App.Components.MainSideBar {
 
 This example shows how you can easily create and register components using ```@Component``` decorator.
 Also you can notice the ```@Inject``` decorator that is used to inject injectable factory methods or constructor functions.
-### Supported decorators 
--  ```@Component``` 
--  ```@Service```
--  ```@Config```
--  ```@Constant```
--  ```@Filter```
--  ```@RouteConfig```
--  ```@Inject```
--  ```@Run```
--  ```@Directive```
--  ```@Describe```
 
+## Installation
+``` bash
+npm install -g yo
+npm install -g generator-laravel-ng-ts
+ ```
+## Create the project 
+```bash
+mkdir my-project
+cd my-project
+yo laravel-ng-ts
+```
+
+```laravel-ng-ts``` project repository can be found at [kujtimiihoxha/laravel-ng-ts](https://github.com/kujtimiihoxha/laravel-ng-ts)
+
+### Supported decorators 
+-  ```@Component```  - to generate components use ```laravel-ng-ts:component [component-name]```
+-  ```@Service```    - to generate services use ```laravel-ng-ts:service [service-name]```
+-  ```@Config```     - to generate a config function use ```laravel-ng-ts:config [config-name]```
+-  ```@Constant```   - to generate a constant use ```laravel-ng-ts:constant [constant-name]```
+-  ```@Filter```     - to generate a filter function use ```laravel-ng-ts:filter [filter-name]```
+-  ```@RouteConfig``` - to generate a route use ```laravel-ng-ts:route [state] [route-url] [route-name] [path](optional)```
+-  ```@Inject```
+-  ```@Run```         - to generate a run function use ```laravel-ng-ts:filter [run-name]```
+-  ```@Directive```   - to generate a filter function use ```laravel-ng-ts:directive [filter-name]```
+-  ```@Describe```    - to generate a filter function use ```laravel-ng-ts:describe [describe-name]```
+
+## Usi
 #### @Component
 The component decorator accepts an object with the type of ```App.Decorators.IComponentOptions``` that extends ```angular.IComponentOptions```
 the only additional field that is added is the ```selector``` field.
@@ -98,8 +114,74 @@ the only additional field that is added is the ```selector``` field.
         require?: string | string[] | {[controller: string]: string};
     }
 ```
+#### @Service
+The service decorator is used to register a service to the app. It accepts an object the type of ```App.Decorators.IServiceOptions```  with the name of the service.
 
-**THIS PROJECT IS STILL ON THE DEVELOPMENT STAGE!!!**
+**IServiceOptions**
+```typescript
+ interface IServiceOptions {
+        /**
+         * The name of the service
+         */
+        serviceName: string;
+    }
+```
+
+Example:
+```typescript
+module App.Core.Services {
+    import IPromise = restangular.IPromise;
+    import IAuthModule = App.Core.Models.AuthModel;
+    import UserRoles = App.Core.Constants.UserRoles;
+
+    export interface IAuthService {
+        login(user: IAuthModule.ILoginModel): IPromise<any>;
+        register(user: IAuthModule.IRegisterModel): IPromise<any>;
+        logout(): IPromise<any>;
+        isAuthenticated(): boolean
+        isAuthorized(access: UserRoles[]): boolean;
+        getCurrentUser(): any;
+    }
+    @Service({
+        serviceName: "App.Core.Services.AuthService"
+    })
+    @Inject("$auth", "$localStorage")
+    class AuthService implements IAuthService {
+        constructor(private $auth: any, private $localStorage: any) {}
+        login(user: IAuthModule.ILoginModel): IPromise<any> {
+            const storage = this.$localStorage;
+            return this.$auth.login(user).then((response: any) => {
+                storage["user"] = response.data.data.user;
+            });
+        }
+        register(user: IAuthModule.IRegisterModel): IPromise<any> {
+            return this.$auth.signup(user);
+        }
+        logout(): IPromise<any> {
+            const storage = this.$localStorage;
+            return this.$auth.logout().then(() => {
+                storage["user"] = null;
+            });
+        }
+        isAuthenticated(): boolean {
+            return !!this.$auth.getToken();
+        }
+        getCurrentUser(): any {
+            if (this.$localStorage["user"] == null) {
+                return { role: Core.Constants.UserRoles.Guest }
+            } else {
+                return this.$localStorage["user"];
+            }
+        }
+        isAuthorized(access: UserRoles[]): boolean {
+            if (access.indexOf(UserRoles.Guest) !== -1) {
+                return true;
+            }
+            return (this.isAuthenticated() && access.indexOf(this.getCurrentUser().role) !== -1);
+        }
+    }
+}
+```
 ## Installation
 ``` bash
 npm install -g yo
@@ -113,6 +195,7 @@ yo laravel-ng-ts
 ```
 
 ```laravel-ng-ts``` project repository can be found at [kujtimiihoxha/laravel-ng-ts](https://github.com/kujtimiihoxha/laravel-ng-ts)
+
 ## Using laravel-ng-ts generators
 - To se how you can use the generator to auto-generate components, routes, etc. look at
  [kujtimiihoxha/generator-laravel-ng-ts](https://github.com/kujtimiihoxha/generator-laravel-ng-ts).

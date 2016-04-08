@@ -22,6 +22,9 @@ module App {
         };
     }
     export interface IServiceOptions {
+        /**
+         * The name of the service
+         */
         serviceName: string;
     }
     export function Service(options: IServiceOptions): any {
@@ -59,6 +62,9 @@ module App {
         };
     }
     export interface IComponentOptions extends angular.IComponentOptions {
+        /**
+         * The html5 tag of the component
+         */
         selector: string;
     }
     export function Component(component: IComponentOptions): any {
@@ -96,6 +102,9 @@ module App {
         };
     }
     export interface IDirectiveOptions extends angular.IDirective {
+        /**
+         * The tag or attribute name of the directive.
+         */
         selector: string;
     }
     export function Directive(options: IDirectiveOptions): any {
