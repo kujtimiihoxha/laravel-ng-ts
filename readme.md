@@ -1,5 +1,5 @@
 # Laravel Angular Typescript starter.
-This project is an attempt to make a good starting point for developers who want to use Angular 1.5 ang Laravel 5.2.   
+This project is an attempt to make a good starting point for developers who want to use Angular 1.5 and Laravel 5.2.   
 Since Angular 2 is coming in the near future this project is aiming to make the transition to Angular 2 a bit easier with
 typescript integration and custom ```decorators``` that use a similar syntax that Angular 2 is using.   
 An example of the custom decorators is the ```@Component()``` decorator that is used to create a new angular component similar to Angular 2 components.
@@ -16,8 +16,7 @@ module App.Components.MainSideBar {
     @Component({
             selector: "main-sidebar",
             templateUrl: "./views/components/main-sidebar/main-sidebar.template.html"
-        }
-    )
+            })
     @Inject("App.Models.SettingsModel")
     class MainSideBarComponent {
         private menuItems: IMenuItem[];
