@@ -6,7 +6,6 @@ module App.Core.Models {
         initItem(id: any, params: {}): any;
         initCollection(params: {}): angular.IPromise<T[]>;
         getItemById(id: any): T;
-        getItem(): T ;
         setItem(item: T): void;
         getCollection(): T[];
         setCollection(collection: T[]): void;
@@ -14,12 +13,14 @@ module App.Core.Models {
         delete(item: T): any;
     }
     export class BaseModel<T> implements IBaseModel<T> {
-        private item: T;
         private collection: T[];
-        constructor(private resource: IBaseResource) {}
+        private resourceIn:IBaseResource;
+        constructor(resource: IBaseResource) {
+            this.resourceIn = resource;
+        }
         initItem(id: any, params: {}): any {
             if (id) {
-                return this.resource.get(id, params).then((item: T): IPromise<T> | T => this.item = item);
+                return this.resourceIn.get(id, params).then((item: T): IPromise<T> | T => angular.extend(this,item));
             } else {
                 // this.item = Type;
                 /*
@@ -31,19 +32,15 @@ module App.Core.Models {
             }
         }
         initCollection(params: {}): angular.IPromise<T[]> {
-            return this.resource.getList(params)
+            return this.resourceIn.getList(params)
                 .then((collection: T[]): ICollectionPromise<T> | T[]  => this.collection = collection);
         }
         getItemById(id: any): T {
             return this.collection.find(item => item["id"] === id);
         }
-
-        getItem(): T {
-            return this.item;
-        }
-
+        
         setItem(item: T): void {
-            this.item = item;
+            angular.extend(this,item)
         }
 
         getCollection(): T[] {
@@ -56,31 +53,28 @@ module App.Core.Models {
 
         save(item: T): any {
             // update existing item if model contains id
-            if (item["id"]) {
+            if (this["id"]) {
                 return this
-                    .resource
+                    .resourceIn
                     .update(item)
                     .then((itemRespond) => {
                     for (let i = 0; i < this.collection.length; i++) {
-                        if (this.collection[i]["id"] === item["id"]) {
+                        if (this.collection[i]["id"] === this["id"]) {
                             Object.assign(this.collection[i], item);
                         }
                     }
                 });
             } else {
-                return this.resource.create(item).then(itemRespond => {
+                return this.resourceIn.create(item).then(itemRespond => {
                     this.collection.push(itemRespond);
                 });
             }
         }
 
         delete(item: T): any {
-            return this.resource.delete(item["id"]).then(() => {
+            return this.resourceIn.delete(this["id"]).then(() => {
                 this.collection.splice(this.collection.indexOf(item), 1);
             });
-        }
-        getResource (): any {
-            return this.resource;
         }
     }
 }

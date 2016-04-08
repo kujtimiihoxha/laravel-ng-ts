@@ -26,5 +26,5 @@ $api->group(['middleware' => ['api']], function ($api) {
 
 //protected routes with JWT (must be logged in)
 $api->group(['middleware' => ['api', 'api.auth']], function ($api) {
-    $api->get('/users/current','UserController@getCurrentUser');
+    $api->get('/settings/{name}','SettingsController@getSettingsByName');
 });
