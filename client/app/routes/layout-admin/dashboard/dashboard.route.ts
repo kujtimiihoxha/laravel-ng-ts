@@ -8,15 +8,13 @@ module App.Routes.LayoutAdmin.Home {
         },
         templateUrl: "./views/routes/layout-admin/dashboard/dashboard.html"
     })
-    @Inject("$rootScope", "$auth", "$element")
     class Home {
         private usr: {};
         panels: any[];
         lineChart: any;
         pieChart: any;
         doughnutChart: any;
-
-        constructor($rootScope: any, $auth: any, $element: any) {
+        constructor() {
             this.addMockPanels();
             this.addMockLineChart();
             this.addMockPieChar();

@@ -2,9 +2,11 @@
 This project is an attempt to make a good starting point for developers who want to use Angular 1.5 and Laravel 5.2.   
 Since Angular 2 is coming in the near future this project is aiming to make the transition to Angular 2 a bit easier with
 typescript integration and custom ```decorators``` that use a similar syntax that Angular 2 is using.   
-An example of the custom decorators is the ```@Component()``` decorator that is used to create a new angular component similar to Angular 2 components.   
 Besides typescript and decorators this project is setup to automatically handle the views and store them in the ```$templateCashe``` of the angular app,Depending on the 
-folder placement of the view it will be stored in the same path in the ```$templateCashe``` with the ```./views/``` prepended.  
+folder placement of the view it will be stored in the same path in the ```$templateCashe``` with the ```./views/``` prepended.   
+The project uses ```SASS``` for styling the views, it is configured to automatically compile ```.scss``` files and store the concatenated output in ```public/css/app.css```  
+
+An example of the custom decorators is the ```@Component()``` decorator that is used to create a new angular component similar to Angular 2 components.   
 ```typescript
 module App.Components.MainSideBar {
     import ISettingsModel = App.Models.ISettingsModel;
@@ -43,10 +45,21 @@ cd my-project
 yo laravel-ng-ts
 ```
 
-## Using laravel-ng-ts generators
-- To se how you can use the generator to fenerate components, routes, etc. look at
- [kujtimiihoxha/generator-laravel-ng-ts](https://github.com/kujtimiihoxha/generator-laravel-ng-ts).
+## Running the app
+Open two terminal windows and navigate to the folder where you 
+project is saved , than in one terminal window run:
+```bash
+gulp && gulp watch
+```
+and the other : 
+```bash
+php artisan serve
+```
 
+after both tasks are running go to 
+```
+http://localhost:8000
+```
 ### Supported decorators 
 -  ```@Component```  - to generate components use ```laravel-ng-ts:component [component-name]```
 -  ```@Service```    - to generate services use ```laravel-ng-ts:service [service-name]```
@@ -59,6 +72,7 @@ yo laravel-ng-ts
 -  ```@Directive```   - to generate a filter function use ```laravel-ng-ts:directive [filter-name]```
 -  ```@Describe```    - to generate a filter function use ```laravel-ng-ts:describe [describe-name]```
 
+To find out more about the generators see   [kujtimiihoxha/generator-laravel-ng-ts](https://github.com/kujtimiihoxha/generator-laravel-ng-ts).
 ## @Component()
 The component decorator accepts an object with the type of ```App.Decorators.IComponentOptions``` that extends ```angular.IComponentOptions```
 the only additional field that is added is the ```selector``` field.
@@ -114,6 +128,94 @@ the only additional field that is added is the ```selector``` field.
         transclude?: boolean | string | {[slot: string]: string};
         require?: string | string[] | {[controller: string]: string};
     }
+```
+## @RouteConfig()
+The RouteConfig decorator makes it very easy register routes and route corresponding controllers it uses ```ui-router``` 
+and all the options that ```ui-router``` provides. RouteConfig automatically registers the target(class constructor) of the decorator as the route controller. 
+Routes also are configured to support user access levels.   
+Example: 
+```typescript
+module App.Routes.LayoutAdmin.Home {
+    import AccessLevels = App.Core.Constants.AccessLevels;
+
+    @RouteConfig("admin.dashboard", {
+        url: "/dashboard",
+        data: {
+            access: AccessLevels.admin
+        },
+        templateUrl: "./views/routes/layout-admin/dashboard/dashboard.html"
+    })
+    class Home {
+        private usr: {};
+        panels: any[];
+        lineChart: any;
+        pieChart: any;
+        doughnutChart: any;
+        constructor() {
+            this.addMockPanels();
+            this.addMockLineChart();
+            this.addMockPieChar();
+            this.addMockdoughnutChar();
+        }
+
+        addMockPanels(): void {
+            this.panels = [];
+            this.panels.push({
+                title: "NEW USERS",
+                value: 26,
+                bodyClass: "text-light bk-primary",
+                link: "#",
+                linkText: "Full Details Hello"
+            });
+            this.panels.push({
+                title: "SUPPORT TICKETS",
+                value: 8,
+                bodyClass: "text-light bk-success",
+                link: "#",
+                linkText: "See All"
+            });
+            this.panels.push({
+                title: "NEW ORDERS",
+                value: 58,
+                bodyClass: "text-light bk-info",
+                link: "#",
+                linkText: "See All"
+            });
+            this.panels.push({
+                title: "NEW COMMENTS",
+                value: 18,
+                bodyClass: "text-light bk-warning",
+                link: "#",
+                linkText: "See All"
+            });
+        }
+
+        addMockLineChart() {
+            this.lineChart = {
+                id: "lineChartExample",
+                height: 310,
+                width: 600
+            };
+        }
+
+        addMockPieChar() {
+            this.pieChart = {
+                id: "pieCharExample",
+                height: 1200,
+                width: 900
+            };
+        }
+
+        addMockdoughnutChar() {
+            this.doughnutChart = {
+                id: "doughnutCharExample",
+                height: 1200,
+                width: 900
+            }
+        }
+    }
+}
+
 ```
 ## @Service()
 The service decorator is used to register a service to the app. It accepts an object the type of ```App.Decorators.IServiceOptions```  with the name of the service.
@@ -239,21 +341,6 @@ module App.Core.Runs {
         }
     }
 }
-```
-## Running the app
-Open two terminal windows and navigate to the folder where you 
-project is saved , than in one terminal window run:
-```bash
-gulp && gulp watch
-```
-and the other : 
-```bash
-php artisan serve
-```
-
-after both tasks are running go to 
-```
-http://localhost:8000
 ```
 ## Folder Structure 
 
