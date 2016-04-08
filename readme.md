@@ -43,7 +43,9 @@ cd my-project
 yo laravel-ng-ts
 ```
 
-```laravel-ng-ts``` project repository can be found at [kujtimiihoxha/laravel-ng-ts](https://github.com/kujtimiihoxha/laravel-ng-ts)
+## Using laravel-ng-ts generators
+- To se how you can use the generator to fenerate components, routes, etc. look at
+ [kujtimiihoxha/generator-laravel-ng-ts](https://github.com/kujtimiihoxha/generator-laravel-ng-ts).
 
 ### Supported decorators 
 -  ```@Component```  - to generate components use ```laravel-ng-ts:component [component-name]```
@@ -57,8 +59,7 @@ yo laravel-ng-ts
 -  ```@Directive```   - to generate a filter function use ```laravel-ng-ts:directive [filter-name]```
 -  ```@Describe```    - to generate a filter function use ```laravel-ng-ts:describe [describe-name]```
 
-## Usi
-#### @Component
+## @Component()
 The component decorator accepts an object with the type of ```App.Decorators.IComponentOptions``` that extends ```angular.IComponentOptions```
 the only additional field that is added is the ```selector``` field.
 
@@ -114,7 +115,7 @@ the only additional field that is added is the ```selector``` field.
         require?: string | string[] | {[controller: string]: string};
     }
 ```
-#### @Service
+## @Service()
 The service decorator is used to register a service to the app. It accepts an object the type of ```App.Decorators.IServiceOptions```  with the name of the service.
 
 **IServiceOptions**
@@ -182,24 +183,63 @@ module App.Core.Services {
     }
 }
 ```
-## Installation
-``` bash
-npm install -g yo
-npm install -g generator-laravel-ng-ts
- ```
-## Create the project 
-```bash
-mkdir my-project
-cd my-project
-yo laravel-ng-ts
+##@Config()
+The config decorator is used to register a function that will be executed in the config stage of the angular app;
+Example:
+```typescript
+module App.Core.Configs {
+    "use strict";
+    import IUrlRouterProvider = angular.ui.IUrlRouterProvider;
+    import ILocationProvider = angular.ILocationProvider;
+    class  CoreConfig {
+        @Config()
+        @Inject("$provide", "$locationProvider",  "$urlRouterProvider","$localStorageProvider")
+        private static config($provide: any, $locationProvider: ILocationProvider , $urlRouterProvider: IUrlRouterProvider, $localStorageProvider: any) {
+            $provide.decorator("$uiViewScroll", ["$delegate", "$window", ($delegate: any, $window: any) => () => {
+                $window.scrollTo(0, 0);
+            }]);
+            $urlRouterProvider.otherwise("/");
+            if (angular.isUndefined($localStorageProvider["user"])) {
+                $localStorageProvider["user"] = null;
+            }
+        }
+    }
+}
 ```
-
-```laravel-ng-ts``` project repository can be found at [kujtimiihoxha/laravel-ng-ts](https://github.com/kujtimiihoxha/laravel-ng-ts)
-
-## Using laravel-ng-ts generators
-- To se how you can use the generator to auto-generate components, routes, etc. look at
- [kujtimiihoxha/generator-laravel-ng-ts](https://github.com/kujtimiihoxha/generator-laravel-ng-ts).
-
+##@Run()
+The run decorator is used to register a function that will be executed in the run stage of the angular app;
+Example:
+```
+module App.Core.Runs {
+    "use strict";
+    import IAuthService = App.Core.Services.IAuthService;
+    import AccessLevels = App.Core.Constants.AccessLevels;
+    class  CoreRun {
+        @Run()
+        @Inject( "$rootScope", "$state", "App.Core.Services.AuthService")
+        private static run($rootScope: any, $state: any, authenticationService: IAuthService) {
+            $rootScope.currentUser = authenticationService.getCurrentUser();
+            $rootScope.AccessLevels = AccessLevels;
+            $rootScope.$on("$stateChangeStart", (event: any, toState: any) => {
+                if (!("data" in toState) || !("access" in toState.data)) {
+                    event.preventDefault();
+                    $state.go("403");
+                } else if (!authenticationService.isAuthorized(toState.data.access) && toState.name !== "auth.login") {
+                    event.preventDefault();
+                      if (authenticationService.isAuthenticated()) {
+                        $state.go("403");
+                    } else {
+                        $state.go("auth.login");
+                    }
+                } else if (authenticationService.isAuthenticated() && toState.url === "/") {
+                    event.preventDefault();
+                    $state.go("admin.dashboard");
+                }
+            });
+        }
+    }
+}
+```
 ## Running the app
 Open two terminal windows and navigate to the folder where you 
 project is saved , than in one terminal window run:

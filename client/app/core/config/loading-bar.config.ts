@@ -1,6 +1,6 @@
-module App.Core.Config {
+module App.Core.Configs {
    class  LoadingBarConfig {
-       @App.Config()
+       @Config()
        @Inject("cfpLoadingBarProvider")
        private static config(cfpLoadingBarProvider: any) {
             cfpLoadingBarProvider.includeSpinner = false;

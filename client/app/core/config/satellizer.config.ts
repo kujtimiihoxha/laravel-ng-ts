@@ -1,6 +1,6 @@
-module App.Core.Config {
+module App.Core.Configs {
     class SatellizerConfig {
-        @App.Config()
+        @Config()
         @Inject("$authProvider")
         private static config($authProvider: any) {
             $authProvider.httpInterceptor = () => true;

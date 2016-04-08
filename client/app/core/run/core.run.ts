@@ -1,9 +1,9 @@
-module App.Core.Run {
+module App.Core.Runs {
     "use strict";
     import IAuthService = App.Core.Services.IAuthService;
     import AccessLevels = App.Core.Constants.AccessLevels;
     class  CoreRun {
-        @App.Run()
+        @Run()
         @Inject( "$rootScope", "$state", "App.Core.Services.AuthService")
         private static run($rootScope: any, $state: any, authenticationService: IAuthService) {
             $rootScope.currentUser = authenticationService.getCurrentUser();

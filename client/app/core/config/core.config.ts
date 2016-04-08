@@ -1,9 +1,9 @@
-module App.Core.Config {
+module App.Core.Configs {
     "use strict";
     import IUrlRouterProvider = angular.ui.IUrlRouterProvider;
     import ILocationProvider = angular.ILocationProvider;
     class  CoreConfig {
-        @App.Config()
+        @Config()
         @Inject("$provide", "$locationProvider", "$urlRouterProvider",
             "$localStorageProvider")
         private static config($provide: any, $locationProvider: ILocationProvider ,
