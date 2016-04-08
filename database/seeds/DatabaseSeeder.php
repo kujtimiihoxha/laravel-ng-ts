@@ -18,6 +18,15 @@ class DatabaseSeeder extends Seeder
                 'created_at'=> Carbon\Carbon::now()
             ]
         );
+
+        DB::table('users')->insert(
+            [
+                'name' => trim('laravel-ng-ts'),
+                'role' => trim('admin'),
+                'email' => trim(strtolower('abc@gmail.com')),
+                'password' => bcrypt('abc@12345')
+            ]
+        );
         // $this->call(UserTableSeeder::class);
     }
 }

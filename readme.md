@@ -44,6 +44,13 @@ mkdir my-project
 cd my-project
 yo laravel-ng-ts
 ```
+## Prepare the app
+Change the ```.env``` file and add your database credentials.
+Run: 
+```
+php artisan migrate
+php artisan db:seed
+```
 
 ## Running the app
 Open two terminal windows and navigate to the folder where you 
@@ -59,6 +66,13 @@ php artisan serve
 after both tasks are running go to 
 ```
 http://localhost:8000
+```
+
+login with 
+
+```
+email: abc@gmail.com
+pass: abc@12345
 ```
 ### Supported decorators 
 -  ```@Component```  - to generate components use ```laravel-ng-ts:component [component-name]```
