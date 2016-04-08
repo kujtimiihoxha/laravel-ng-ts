@@ -84,7 +84,7 @@ pass: abc@12345
 -  ```@RouteConfig``` - to generate a route use ```laravel-ng-ts:route [state] [route-url] [route-name] [path](optional)```
 -  ```@Inject```
 -  ```@Run```         - to generate a run function use ```laravel-ng-ts:filter [run-name]```
--  ```@Directive```   - to generate a filter function use ```laravel-ng-ts:directive [filter-name]```
+-  ```@Directive```   - it is recommended to use component, you can use directives similar to components. 
 -  ```@Describe```    - to generate a filter function use ```laravel-ng-ts:describe [describe-name]```
 
 To find out more about the generators see   [kujtimiihoxha/generator-laravel-ng-ts](https://github.com/kujtimiihoxha/generator-laravel-ng-ts).
@@ -357,6 +357,10 @@ module App.Core.Runs {
     }
 }
 ```
+
+**If you create your own classes and they have dependencies on other classes do not forget to add a ```ref``` comment on the top 
+of the class so after the concatenation the order of the classes that are put to the ```app.js``` is right. You can se an example in the ```SettingsModel``` class**
+
 ## Folder Structure 
 
 #### Backend
@@ -373,6 +377,8 @@ module App.Core.Runs {
 client/
     |- app/                                      --> source code folder
     |   |- components/                              --> angular components
+    |   |- config/                                  --> angular config
+    |   |- constants/                               --> angular constants
     |   |- core/                                    --> core files(config,run,core-services etc.)
     |   |   |- config/                                  --> core configurations folder
     |   |   |   |- core.config.ts                           --> some necessary configurations
@@ -393,6 +399,7 @@ client/
     |   |- models/                                  --> models used by the resources to get objects from the api
     |   |- resources/                               --> resources to comunicate with the api
     |   |- routes/                                  --> app routes
+    |   |- run/                                     --> app run
     |   |- services/                                --> app services
     |   |- app.decorators.ts                        --> app decorators
     |   |- app.main.ts                              --> app main file

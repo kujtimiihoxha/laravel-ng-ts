@@ -14,11 +14,13 @@ module App {
             angular.module("app.config").config(target.config);
         };
     }
-
-    export function Constant(constantName: string): any {
+    export interface IConstantOptions{
+        constantName:string;
+    }
+    export function Constant(options: IConstantOptions): any {
         "use strict";
         return (target: any) => {
-            angular.module("app.constants").constant(constantName, target.constant());
+            angular.module("app.constants").constant(options.constantName, target.constant());
         };
     }
     export interface IServiceOptions {
