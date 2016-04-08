@@ -357,7 +357,25 @@ module App.Core.Runs {
     }
 }
 ```
+## @Describe()
+Is used for unit testing, the project uses [ng-describe](https://github.com/kensho/ng-describe), all the options from this 
+repository can be used in the decorator.
 
+Example: 
+```
+module App.Tests {
+    class AppTest {
+        @Describe({
+            name: "First Test"
+        })
+        static tests(deps: any) {
+            it("Should do something", () => {
+                expect(2).toBe(2);
+            });
+        }
+    }
+}
+```
 **If you create your own classes and they have dependencies on other classes do not forget to add a ```ref``` comment on the top 
 of the class so after the concatenation the order of the classes that are put to the ```app.js``` is right. You can se an example in the ```SettingsModel``` class**
 
