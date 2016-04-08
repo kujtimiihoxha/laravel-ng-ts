@@ -3,7 +3,8 @@ This project is an attempt to make a good starting point for developers who want
 Since Angular 2 is coming in the near future this project is aiming to make the transition to Angular 2 a bit easier with
 typescript integration and custom ```decorators``` that use a similar syntax that Angular 2 is using.   
 An example of the custom decorators is the ```@Component()``` decorator that is used to create a new angular component similar to Angular 2 components.
-
+Besides typescript and decorators this project is setup to automatically handle the views and store them in the ```$templateCashe``` of the angular app,Depending on the 
+folder placement of the view it will be stored in the same path in the ```$templateCashe``` with the ```./views/``` prepended.  
 ```typescript
 module App.Components.MainSideBar {
     import ISettingsModel = App.Models.ISettingsModel;
@@ -208,7 +209,7 @@ module App.Core.Configs {
 ##@Run()
 The run decorator is used to register a function that will be executed in the run stage of the angular app;
 Example:
-```
+```typescript
 module App.Core.Runs {
     "use strict";
     import IAuthService = App.Core.Services.IAuthService;
