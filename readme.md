@@ -131,7 +131,7 @@ the only additional field that is added is the ```selector``` field.
 ```
 ## @RouteConfig()
 The RouteConfig decorator makes it very easy register routes and route corresponding controllers it uses ```ui-router``` 
-and all the options that ```ui-router``` provides. RouteConfig automatically registers the target(class constructor) of the decorator as the route controller. 
+and all the options that ```ui-router``` provides. RouteConfig automatically registers the target(class) of the decorator as the route controller. 
 Routes also are configured to support user access levels.   
 Example: 
 ```typescript

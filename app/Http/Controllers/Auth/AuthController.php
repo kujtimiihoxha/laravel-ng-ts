@@ -14,7 +14,7 @@ class AuthController extends Controller
     {
         $this->validate($request, [
             'email'    => 'required|email',
-            'password' => 'required|min:8',
+            'password' => 'required|min:8'
         ]);
 
         $credentials = $request->only('email', 'password');
@@ -39,10 +39,12 @@ class AuthController extends Controller
             'name'       => 'required|min:3',
             'email'      => 'required|email|unique:users',
             'password'   => 'required|min:8',
+            'role'   => 'required',
         ]);
 
         $user = new User;
         $user->name = trim($request->name);
+        $user->role = trim($request->role);
         $user->email = trim(strtolower($request->email));
         $user->password = bcrypt($request->password);
         $user->save();
