@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="UTF-8">
+    <title>laravel-ng-ts by kujtimiihoxha</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+  </head>
+  <body>
+    <section class="page-header">
+      <h1 class="project-name">laravel-ng-ts</h1>
+      <h2 class="project-tagline">Laravel 5.2 Angular 1.5 Typescript  Starter.</h2>
+      <a href="https://github.com/kujtimiihoxha/laravel-ng-ts" class="btn">View on GitHub</a>
+      <a href="https://github.com/kujtimiihoxha/laravel-ng-ts/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/kujtimiihoxha/laravel-ng-ts/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
+
+    <section class="main-content">
+      <h1>
+<a id="laravel-angular-typescript-starter" class="anchor" href="#laravel-angular-typescript-starter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Laravel Angular Typescript starter.</h1>
+
+<p>This project is an attempt to make a good starting point for developers who want to use Angular 1.5 and Laravel 5.2.<br>
+Since Angular 2 is coming in the near future this project is aiming to make the transition to Angular 2 a bit easier with
+typescript integration and custom <code>decorators</code> that use a similar syntax that Angular 2 is using.<br>
+Besides typescript and decorators this project is setup to automatically handle the views and store them in the <code>$templateCashe</code> of the angular app,Depending on the 
+folder placement of the view it will be stored in the same path in the <code>$templateCashe</code> with the <code>./views/</code> prepended.<br>
+The project uses <code>SASS</code> for styling the views, it is configured to automatically compile <code>.scss</code> files and store the concatenated output in <code>public/css/app.css</code>  </p>
+
+<p>An example of the custom decorators is the <code>@Component()</code> decorator that is used to create a new angular component similar to Angular 2 components.   </p>
+
+<div class="highlight highlight-source-ts"><pre><span class="pl-k">module</span> App.Components.MainSideBar {
+    <span class="pl-k">import</span> ISettingsModel <span class="pl-k">=</span> App.Models.ISettingsModel;
+    <span class="pl-k">export</span> <span class="pl-k">interface</span> <span class="pl-en">IMenuItem</span> {
+        <span class="pl-v">title</span>: <span class="pl-k">string</span>,
+        <span class="pl-v">icon</span>: <span class="pl-k">string</span>,
+        <span class="pl-v">state</span>: <span class="pl-k">string</span>,
+        <span class="pl-v">children</span> : IMenuItem[]
+    }
+    @Component({
+            selector: <span class="pl-s">"main-sidebar"</span>,
+            templateUrl: <span class="pl-s">"./views/components/main-sidebar/main-sidebar.template.html"</span>
+            })
+    @Inject(<span class="pl-s">"App.Models.SettingsModel"</span>)
+    <span class="pl-k">class</span> <span class="pl-en">MainSideBarComponent</span> {
+        <span class="pl-k">private</span> <span class="pl-v">menuItems</span>: IMenuItem[];
+        <span class="pl-en">constructor</span>(<span class="pl-v">SettingsModel</span>: ISettingsModel) {
+            <span class="pl-c1">this</span>.menuItems <span class="pl-k">=</span> JSON.parse(SettingsModel.values).items;
+        }
+    }
+}</pre></div>
+
+<p>This example shows how you can easily create and register components using <code>@Component</code> decorator.
+Also you can notice the <code>@Inject</code> decorator that is used to inject injectable factory methods or constructor functions.</p>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<div class="highlight highlight-source-shell"><pre>npm install -g yo
+npm install -g generator-laravel-ng-ts</pre></div>
+
+<h2>
+<a id="create-the-project" class="anchor" href="#create-the-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create the project</h2>
+
+<div class="highlight highlight-source-shell"><pre>mkdir my-project
+<span class="pl-c1">cd</span> my-project
+yo laravel-ng-ts</pre></div>
+
+<h2>
+<a id="prepare-the-app" class="anchor" href="#prepare-the-app" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prepare the app</h2>
+
+<p>Change the <code>.env</code> file and add your database credentials.
+Run: </p>
+
+<pre><code>php artisan migrate
+php artisan db:seed
+</code></pre>
+
+<h2>
+<a id="running-the-app" class="anchor" href="#running-the-app" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running the app</h2>
+
+<p>Open two terminal windows and navigate to the folder where you 
+project is saved , than in one terminal window run:</p>
+
+<div class="highlight highlight-source-shell"><pre>gulp <span class="pl-k">&amp;&amp;</span> gulp watch</pre></div>
+
+<p>and the other : </p>
+
+<div class="highlight highlight-source-shell"><pre>php artisan serve</pre></div>
+
+<p>after both tasks are running go to </p>
+
+<pre><code>http://localhost:8000
+</code></pre>
+
+<p>login to dashboard </p>
+
+<pre><code>go to  http://localhost:8000/#/auth/login
+
+email: abc@gmail.com
+pass: abc@12345
+</code></pre>
+
+<h3>
+<a id="supported-decorators" class="anchor" href="#supported-decorators" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Supported decorators</h3>
+
+<ul>
+<li> <code>@Component</code>  - to generate components use <code>laravel-ng-ts:component [component-name]</code>
+</li>
+<li> <code>@Service</code>    - to generate services use <code>laravel-ng-ts:service [service-name]</code>
+</li>
+<li> <code>@Config</code>     - to generate a config function use <code>laravel-ng-ts:config [config-name]</code>
+</li>
+<li> <code>@Constant</code>   - to generate a constant use <code>laravel-ng-ts:constant [constant-name]</code>
+</li>
+<li> <code>@Filter</code>     - to generate a filter function use <code>laravel-ng-ts:filter [filter-name]</code>
+</li>
+<li> <code>@RouteConfig</code> - to generate a route use <code>laravel-ng-ts:route [state] [route-url] [route-name] [path](optional)</code>
+</li>
+<li> <code>@Inject</code>
+</li>
+<li> <code>@Run</code>         - to generate a run function use <code>laravel-ng-ts:filter [run-name]</code>
+</li>
+<li> <code>@Directive</code>   - it is recommended to use component, you can use directives similar to components. </li>
+<li> <code>@Describe</code>    - to generate a unit tests use <code>laravel-ng-ts:describe [describe-name]</code>
+</li>
+</ul>
+
+<p>To find out more about the generators see   <a href="https://github.com/kujtimiihoxha/generator-laravel-ng-ts">kujtimiihoxha/generator-laravel-ng-ts</a>.</p>
+
+<h2>
+<a id="component" class="anchor" href="#component" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/Component" class="user-mention">@Component</a>()</h2>
+
+<p>The component decorator accepts an object with the type of <code>App.Decorators.IComponentOptions</code> that extends <code>angular.IComponentOptions</code>
+the only additional field that is added is the <code>selector</code> field.</p>
+
+<p><strong>IComponentOptions</strong></p>
+
+<div class="highlight highlight-source-ts"><pre> <span class="pl-c">/**</span>
+<span class="pl-c">     * Component definition object (a simplified directive definition object)</span>
+<span class="pl-c">     */</span>
+    <span class="pl-k">interface</span> <span class="pl-en">IComponentOptions</span> {
+        <span class="pl-c">/**</span>
+<span class="pl-c">         * The html5 tag of the component</span>
+<span class="pl-c">         */</span>
+        <span class="pl-v">selector</span>: <span class="pl-k">string</span>
+        <span class="pl-c">/**</span>
+<span class="pl-c">         * Controller constructor function that should be associated with newly created scope or the name of a registered</span>
+<span class="pl-c">         * controller if passed as a string. Empty function by default.</span>
+<span class="pl-c">         * Use the array form to define dependencies (necessary if strictDi is enabled and you require dependency injection)</span>
+<span class="pl-c">         */</span>
+        <span class="pl-v">controller</span><span class="pl-k">?</span>: <span class="pl-k">string</span> <span class="pl-k">|</span> Function <span class="pl-k">|</span> (<span class="pl-k">string</span> <span class="pl-k">|</span> Function)[];
+        <span class="pl-c">/**</span>
+<span class="pl-c">         * An identifier name for a reference to the controller. If present, the controller will be published to scope under</span>
+<span class="pl-c">         * the controllerAs name. If not present, this will default to be the same as the component name.</span>
+<span class="pl-c">         * @default "$ctrl"</span>
+<span class="pl-c">         */</span>
+        <span class="pl-v">controllerAs</span><span class="pl-k">?</span>: <span class="pl-k">string</span>;
+        <span class="pl-c">/**</span>
+<span class="pl-c">         * html template as a string or a function that returns an html template as a string which should be used as the</span>
+<span class="pl-c">         * contents of this component. Empty string by default.</span>
+<span class="pl-c">         * If template is a function, then it is injected with the following locals:</span>
+<span class="pl-c">         * $element - Current element</span>
+<span class="pl-c">         * $attrs - Current attributes object for the element</span>
+<span class="pl-c">         * Use the array form to define dependencies (necessary if strictDi is enabled and you require dependency injection)</span>
+<span class="pl-c">         */</span>
+        <span class="pl-v">template</span><span class="pl-k">?</span>: <span class="pl-k">string</span> <span class="pl-k">|</span> Function <span class="pl-k">|</span> (<span class="pl-k">string</span> <span class="pl-k">|</span> Function)[];
+        <span class="pl-c">/**</span>
+<span class="pl-c">         * path or function that returns a path to an html template that should be used as the contents of this component.</span>
+<span class="pl-c">         * If templateUrl is a function, then it is injected with the following locals:</span>
+<span class="pl-c">         * $element - Current element</span>
+<span class="pl-c">         * $attrs - Current attributes object for the element</span>
+<span class="pl-c">         * Use the array form to define dependencies (necessary if strictDi is enabled and you require dependency injection)</span>
+<span class="pl-c">         */</span>
+        <span class="pl-v">templateUrl</span><span class="pl-k">?</span>: <span class="pl-k">string</span> <span class="pl-k">|</span> Function <span class="pl-k">|</span> (<span class="pl-k">string</span> <span class="pl-k">|</span> Function)[];
+        <span class="pl-c">/**</span>
+<span class="pl-c">         * Define DOM attribute binding to component properties. Component properties are always bound to the component</span>
+<span class="pl-c">         * controller and not to the scope.</span>
+<span class="pl-c">         */</span>
+        <span class="pl-v">bindings</span><span class="pl-k">?</span>: {[binding: <span class="pl-k">string</span>]: <span class="pl-k">string</span>};
+        <span class="pl-c">/**</span>
+<span class="pl-c">         * Whether transclusion is enabled. Enabled by default.</span>
+<span class="pl-c">         */</span>
+        <span class="pl-v">transclude</span><span class="pl-k">?</span>: <span class="pl-k">boolean</span> <span class="pl-k">|</span> <span class="pl-k">string</span> <span class="pl-k">|</span> {[slot: <span class="pl-k">string</span>]: <span class="pl-k">string</span>};
+        <span class="pl-v">require</span><span class="pl-k">?</span>: <span class="pl-k">string</span> <span class="pl-k">|</span> <span class="pl-k">string</span>[] <span class="pl-k">|</span> {[controller: <span class="pl-k">string</span>]: <span class="pl-k">string</span>};
+    }</pre></div>
+
+<h2>
+<a id="routeconfig" class="anchor" href="#routeconfig" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/RouteConfig" class="user-mention">@RouteConfig</a>()</h2>
+
+<p>The RouteConfig decorator makes it very easy register routes and route corresponding controllers it uses <code>ui-router</code> 
+and all the options that <code>ui-router</code> provides. RouteConfig automatically registers the target(class) of the decorator as the route controller. 
+Routes also are configured to support user access levels.<br>
+Example: </p>
+
+<div class="highlight highlight-source-ts"><pre><span class="pl-k">module</span> App.Routes.LayoutAdmin.Home {
+    <span class="pl-k">import</span> AccessLevels <span class="pl-k">=</span> App.Core.Constants.AccessLevels;
+
+    @RouteConfig(<span class="pl-s">"admin.dashboard"</span>, {
+        url: <span class="pl-s">"/dashboard"</span>,
+        data: {
+            access: AccessLevels.admin
+        },
+        templateUrl: <span class="pl-s">"./views/routes/layout-admin/dashboard/dashboard.html"</span>
+    })
+    <span class="pl-k">class</span> <span class="pl-en">Home</span> {
+        <span class="pl-k">private</span> <span class="pl-v">usr</span>: {};
+        <span class="pl-v">panels</span>: <span class="pl-k">any</span>[];
+        <span class="pl-v">lineChart</span>: <span class="pl-k">any</span>;
+        <span class="pl-v">pieChart</span>: <span class="pl-k">any</span>;
+        <span class="pl-v">doughnutChart</span>: <span class="pl-k">any</span>;
+        <span class="pl-en">constructor</span>() {
+            <span class="pl-c1">this</span>.addMockPanels();
+            <span class="pl-c1">this</span>.addMockLineChart();
+            <span class="pl-c1">this</span>.addMockPieChar();
+            <span class="pl-c1">this</span>.addMockdoughnutChar();
+        }
+
+        <span class="pl-en">addMockPanels</span>(): <span class="pl-k">void</span> {
+            <span class="pl-c1">this</span>.panels <span class="pl-k">=</span> [];
+            <span class="pl-c1">this</span>.panels.push({
+                title: <span class="pl-s">"NEW USERS"</span>,
+                value: <span class="pl-c1">26</span>,
+                bodyClass: <span class="pl-s">"text-light bk-primary"</span>,
+                link: <span class="pl-s">"#"</span>,
+                linkText: <span class="pl-s">"Full Details Hello"</span>
+            });
+            <span class="pl-c1">this</span>.panels.push({
+                title: <span class="pl-s">"SUPPORT TICKETS"</span>,
+                value: <span class="pl-c1">8</span>,
+                bodyClass: <span class="pl-s">"text-light bk-success"</span>,
+                link: <span class="pl-s">"#"</span>,
+                linkText: <span class="pl-s">"See All"</span>
+            });
+            <span class="pl-c1">this</span>.panels.push({
+                title: <span class="pl-s">"NEW ORDERS"</span>,
+                value: <span class="pl-c1">58</span>,
+                bodyClass: <span class="pl-s">"text-light bk-info"</span>,
+                link: <span class="pl-s">"#"</span>,
+                linkText: <span class="pl-s">"See All"</span>
+            });
+            <span class="pl-c1">this</span>.panels.push({
+                title: <span class="pl-s">"NEW COMMENTS"</span>,
+                value: <span class="pl-c1">18</span>,
+                bodyClass: <span class="pl-s">"text-light bk-warning"</span>,
+                link: <span class="pl-s">"#"</span>,
+                linkText: <span class="pl-s">"See All"</span>
+            });
+        }
+
+        <span class="pl-en">addMockLineChart</span>() {
+            <span class="pl-c1">this</span>.lineChart <span class="pl-k">=</span> {
+                id: <span class="pl-s">"lineChartExample"</span>,
+                height: <span class="pl-c1">310</span>,
+                width: <span class="pl-c1">600</span>
+            };
+        }
+
+        <span class="pl-en">addMockPieChar</span>() {
+            <span class="pl-c1">this</span>.pieChart <span class="pl-k">=</span> {
+                id: <span class="pl-s">"pieCharExample"</span>,
+                height: <span class="pl-c1">1200</span>,
+                width: <span class="pl-c1">900</span>
+            };
+        }
+
+        <span class="pl-en">addMockdoughnutChar</span>() {
+            <span class="pl-c1">this</span>.doughnutChart <span class="pl-k">=</span> {
+                id: <span class="pl-s">"doughnutCharExample"</span>,
+                height: <span class="pl-c1">1200</span>,
+                width: <span class="pl-c1">900</span>
+            }
+        }
+    }
+}
+</pre></div>
+
+<h2>
+<a id="service" class="anchor" href="#service" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/Service" class="user-mention">@Service</a>()</h2>
+
+<p>The service decorator is used to register a service to the app. It accepts an object the type of <code>App.Decorators.IServiceOptions</code>  with the name of the service.</p>
+
+<p><strong>IServiceOptions</strong></p>
+
+<div class="highlight highlight-source-ts"><pre> <span class="pl-k">interface</span> <span class="pl-en">IServiceOptions</span> {
+        <span class="pl-c">/**</span>
+<span class="pl-c">         * The name of the service</span>
+<span class="pl-c">         */</span>
+        <span class="pl-v">serviceName</span>: <span class="pl-k">string</span>;
+    }</pre></div>
+
+<p>Example:</p>
+
+<div class="highlight highlight-source-ts"><pre><span class="pl-k">module</span> App.Core.Services {
+    <span class="pl-k">import</span> IPromise <span class="pl-k">=</span> restangular.IPromise;
+    <span class="pl-k">import</span> IAuthModule <span class="pl-k">=</span> App.Core.Models.AuthModel;
+    <span class="pl-k">import</span> UserRoles <span class="pl-k">=</span> App.Core.Constants.UserRoles;
+
+    <span class="pl-k">export</span> <span class="pl-k">interface</span> <span class="pl-en">IAuthService</span> {
+        <span class="pl-en">login</span>(<span class="pl-v">user</span>: IAuthModule.ILoginModel): <span class="pl-en">IPromise</span>&lt;<span class="pl-k">any</span>&gt;;
+        <span class="pl-en">register</span>(<span class="pl-v">user</span>: IAuthModule.IRegisterModel): <span class="pl-en">IPromise</span>&lt;<span class="pl-k">any</span>&gt;;
+        <span class="pl-en">logout</span>(): <span class="pl-en">IPromise</span>&lt;<span class="pl-k">any</span>&gt;;
+        <span class="pl-en">isAuthenticated</span>(): <span class="pl-k">boolean</span>
+        <span class="pl-en">isAuthorized</span>(<span class="pl-v">access</span>: UserRoles[]): <span class="pl-k">boolean</span>;
+        <span class="pl-en">getCurrentUser</span>(): <span class="pl-k">any</span>;
+    }
+    @Service({
+        serviceName: <span class="pl-s">"App.Core.Services.AuthService"</span>
+    })
+    @Inject(<span class="pl-s">"$auth"</span>, <span class="pl-s">"$localStorage"</span>)
+    <span class="pl-k">class</span> <span class="pl-en">AuthService</span> <span class="pl-k">implements</span> <span class="pl-k">IAuthService</span> {
+        <span class="pl-en">constructor</span>(<span class="pl-k">private</span> <span class="pl-v">$auth</span>: <span class="pl-k">any</span>, <span class="pl-k">private</span> <span class="pl-v">$localStorage</span>: <span class="pl-k">any</span>) {}
+        <span class="pl-en">login</span>(<span class="pl-v">user</span>: IAuthModule.ILoginModel): <span class="pl-en">IPromise</span>&lt;<span class="pl-k">any</span>&gt; {
+            <span class="pl-k">const</span> <span class="pl-v">storage</span> = <span class="pl-c1">this</span>.$localStorage;
+            <span class="pl-k">return</span> <span class="pl-c1">this</span>.$auth.login(user).then((response: <span class="pl-k">any</span>) <span class="pl-k">=&gt;</span> {
+                storage[<span class="pl-s">"user"</span>] <span class="pl-k">=</span> response.data.data.user;
+            });
+        }
+        <span class="pl-en">register</span>(<span class="pl-v">user</span>: IAuthModule.IRegisterModel): <span class="pl-en">IPromise</span>&lt;<span class="pl-k">any</span>&gt; {
+            <span class="pl-k">return</span> <span class="pl-c1">this</span>.$auth.signup(user);
+        }
+        <span class="pl-en">logout</span>(): <span class="pl-en">IPromise</span>&lt;<span class="pl-k">any</span>&gt; {
+            <span class="pl-k">const</span> <span class="pl-v">storage</span> = <span class="pl-c1">this</span>.$localStorage;
+            <span class="pl-k">return</span> <span class="pl-c1">this</span>.$auth.logout().then(() <span class="pl-k">=&gt;</span> {
+                storage[<span class="pl-s">"user"</span>] <span class="pl-k">=</span> <span class="pl-c1">null</span>;
+            });
+        }
+        <span class="pl-en">isAuthenticated</span>(): <span class="pl-k">boolean</span> {
+            <span class="pl-k">return</span> <span class="pl-k">!!</span><span class="pl-c1">this</span>.$auth.getToken();
+        }
+        <span class="pl-en">getCurrentUser</span>(): <span class="pl-k">any</span> {
+            <span class="pl-k">if</span> (<span class="pl-c1">this</span>.$localStorage[<span class="pl-s">"user"</span>] <span class="pl-k">==</span> <span class="pl-c1">null</span>) {
+                <span class="pl-k">return</span> { role: Core.Constants.UserRoles.Guest }
+            } <span class="pl-k">else</span> {
+                <span class="pl-k">return</span> <span class="pl-c1">this</span>.$localStorage[<span class="pl-s">"user"</span>];
+            }
+        }
+        <span class="pl-en">isAuthorized</span>(<span class="pl-v">access</span>: UserRoles[]): <span class="pl-k">boolean</span> {
+            <span class="pl-k">if</span> (access.indexOf(UserRoles.Guest) <span class="pl-k">!==</span> <span class="pl-k">-</span><span class="pl-c1">1</span>) {
+                <span class="pl-k">return</span> <span class="pl-c1">true</span>;
+            }
+            <span class="pl-k">return</span> (<span class="pl-c1">this</span>.isAuthenticated() <span class="pl-k">&amp;&amp;</span> access.indexOf(<span class="pl-c1">this</span>.getCurrentUser().role) <span class="pl-k">!==</span> <span class="pl-k">-</span><span class="pl-c1">1</span>);
+        }
+    }
+}</pre></div>
+
+<h2>
+<a id="config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/Config" class="user-mention">@Config</a>()</h2>
+
+<p>The config decorator is used to register a function that will be executed in the config stage of the angular app;
+Example:</p>
+
+<div class="highlight highlight-source-ts"><pre><span class="pl-k">module</span> App.Core.Configs {
+    <span class="pl-s">"use strict"</span>;
+    <span class="pl-k">import</span> IUrlRouterProvider <span class="pl-k">=</span> angular.ui.IUrlRouterProvider;
+    <span class="pl-k">import</span> ILocationProvider <span class="pl-k">=</span> angular.ILocationProvider;
+    <span class="pl-k">class</span>  <span class="pl-en">CoreConfig</span> {
+        @<span class="pl-en">Config</span>()
+        @<span class="pl-en">Inject</span>("<span class="pl-v">$provide</span>", "<span class="pl-v">$locationProvider</span>",  "<span class="pl-v">$urlRouterProvider</span>","<span class="pl-v">$localStorageProvider</span>")
+        private static <span class="pl-en">config</span>(<span class="pl-v">$provide</span>: <span class="pl-k">any</span>, <span class="pl-v">$locationProvider</span>: ILocationProvider , <span class="pl-v">$urlRouterProvider</span>: IUrlRouterProvider, <span class="pl-v">$localStorageProvider</span>: <span class="pl-k">any</span>) {
+            $provide.decorator(<span class="pl-s">"$uiViewScroll"</span>, [<span class="pl-s">"$delegate"</span>, <span class="pl-s">"$window"</span>, ($delegate: <span class="pl-k">any</span>, $window: <span class="pl-k">any</span>) <span class="pl-k">=&gt;</span> () <span class="pl-k">=&gt;</span> {
+                $window.scrollTo(<span class="pl-c1">0</span>, <span class="pl-c1">0</span>);
+            }]);
+            $urlRouterProvider.otherwise(<span class="pl-s">"/"</span>);
+            <span class="pl-k">if</span> (angular.isUndefined($localStorageProvider[<span class="pl-s">"user"</span>])) {
+                $localStorageProvider[<span class="pl-s">"user"</span>] <span class="pl-k">=</span> <span class="pl-c1">null</span>;
+            }
+        }
+    }
+}</pre></div>
+
+<h2>
+<a id="run" class="anchor" href="#run" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/Run" class="user-mention">@Run</a>()</h2>
+
+<p>The run decorator is used to register a function that will be executed in the run stage of the angular app;
+Example:</p>
+
+<div class="highlight highlight-source-ts"><pre><span class="pl-k">module</span> App.Core.Runs {
+    <span class="pl-s">"use strict"</span>;
+    <span class="pl-k">import</span> IAuthService <span class="pl-k">=</span> App.Core.Services.IAuthService;
+    <span class="pl-k">import</span> AccessLevels <span class="pl-k">=</span> App.Core.Constants.AccessLevels;
+    <span class="pl-k">class</span>  <span class="pl-en">CoreRun</span> {
+        @<span class="pl-en">Run</span>()
+        @<span class="pl-en">Inject</span>( "<span class="pl-v">$rootScope</span>", "<span class="pl-v">$state</span>", "<span class="pl-v">App</span>.<span class="pl-v">Core</span>.<span class="pl-v">Services</span>.<span class="pl-v">AuthService</span>")
+        private static <span class="pl-en">run</span>(<span class="pl-v">$rootScope</span>: <span class="pl-k">any</span>, <span class="pl-v">$state</span>: <span class="pl-k">any</span>, <span class="pl-v">authenticationService</span>: IAuthService) {
+            $rootScope.currentUser <span class="pl-k">=</span> authenticationService.getCurrentUser();
+            $rootScope.AccessLevels <span class="pl-k">=</span> AccessLevels;
+            $rootScope.$on(<span class="pl-s">"$stateChangeStart"</span>, (event: <span class="pl-k">any</span>, toState: <span class="pl-k">any</span>) <span class="pl-k">=&gt;</span> {
+                <span class="pl-k">if</span> (<span class="pl-k">!</span>(<span class="pl-s">"data"</span> <span class="pl-k">in</span> toState) <span class="pl-k">||</span> <span class="pl-k">!</span>(<span class="pl-s">"access"</span> <span class="pl-k">in</span> toState.data)) {
+                    event.preventDefault();
+                    $state.go(<span class="pl-s">"403"</span>);
+                } <span class="pl-k">else</span> <span class="pl-k">if</span> (<span class="pl-k">!</span>authenticationService.isAuthorized(toState.data.access) <span class="pl-k">&amp;&amp;</span> toState.name <span class="pl-k">!==</span> <span class="pl-s">"auth.login"</span>) {
+                    event.preventDefault();
+                      <span class="pl-k">if</span> (authenticationService.isAuthenticated()) {
+                        $state.go(<span class="pl-s">"403"</span>);
+                    } <span class="pl-k">else</span> {
+                        $state.go(<span class="pl-s">"auth.login"</span>);
+                    }
+                } <span class="pl-k">else</span> <span class="pl-k">if</span> (authenticationService.isAuthenticated() <span class="pl-k">&amp;&amp;</span> toState.url <span class="pl-k">===</span> <span class="pl-s">"/"</span>) {
+                    event.preventDefault();
+                    $state.go(<span class="pl-s">"admin.dashboard"</span>);
+                }
+            });
+        }
+    }
+}</pre></div>
+
+<h2>
+<a id="describe" class="anchor" href="#describe" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/Describe" class="user-mention">@Describe</a>()</h2>
+
+<p>Is used for unit testing, the project uses <a href="https://github.com/kensho/ng-describe">ng-describe</a>, all the options from this 
+repository can be used in the decorator.</p>
+
+<p>Example: </p>
+
+<pre><code>module App.Tests {
+    class AppTest {
+        @Describe({
+            name: "First Test"
+        })
+        static tests(deps: any) {
+            it("Should do something", () =&gt; {
+                expect(2).toBe(2);
+            });
+        }
+    }
+}
+</code></pre>
+
+<p><strong>If you create your own classes and they have dependencies on other classes do not forget to add a <code>ref</code> comment on the top 
+of the class so after the concatenation the order of the classes that are put to the <code>app.js</code> is right. You can se an example in the <code>SettingsModel</code> class</strong></p>
+
+<h2>
+<a id="folder-structure" class="anchor" href="#folder-structure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Folder Structure</h2>
+
+<h4>
+<a id="backend" class="anchor" href="#backend" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Backend</h4>
+
+<ul>
+<li>The backend folder structure is the same as the standard laravel folder structure.</li>
+</ul>
+
+<h4>
+<a id="frontend" class="anchor" href="#frontend" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Frontend</h4>
+
+<ul>
+<li>All the frontend files are in the  <code>client/</code> , <code>gulp</code> and <code>theme</code> folders.</li>
+</ul>
+
+<h5>
+<a id="client-folder-" class="anchor" href="#client-folder-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Client folder :</h5>
+
+<pre><code>client/
+    |- app/                                      --&gt; source code folder
+    |   |- components/                              --&gt; angular components
+    |   |- config/                                  --&gt; angular config
+    |   |- constants/                               --&gt; angular constants
+    |   |- core/                                    --&gt; core files(config,run,core-services etc.)
+    |   |   |- config/                                  --&gt; core configurations folder
+    |   |   |   |- core.config.ts                           --&gt; some necessary configurations
+    |   |   |   |- loading-bar.config.ts                    --&gt; loading bar configurations
+    |   |   |   |- satellizer.config.ts                     --&gt; satellizer cofigurations
+    |   |   |- constants/                               --&gt; core constants folder
+    |   |   |   |- core.constant.ts                         --&gt; some necessary configurations
+    |   |   |- models/                                  --&gt; core models folder
+    |   |   |   |- auth.model.ts                            --&gt; login and register user models
+    |   |   |   |- base.model.ts                            --&gt; base model that all resource models inherit
+    |   |   |- resources/                               --&gt; core resources folder
+    |   |   |   |- base.resource.ts                         --&gt; base resource that all resources inherit
+    |   |   |- run/                                     --&gt; core run configurations folder
+    |   |   |   |- core.run.ts                         --&gt; base resource that all resources inherit
+    |   |   |- services/                                --&gt; core services
+    |   |   |   |- api.service.ts                         --&gt; setup restangular api to work with jwt and our api
+    |   |   |   |- auth.service.ts                        --&gt; authentication service to handle user session, login, logout, register
+    |   |- models/                                  --&gt; models used by the resources to get objects from the api
+    |   |- resources/                               --&gt; resources to comunicate with the api
+    |   |- routes/                                  --&gt; app routes
+    |   |- run/                                     --&gt; app run
+    |   |- services/                                --&gt; app services
+    |   |- app.decorators.ts                        --&gt; app decorators
+    |   |- app.main.ts                              --&gt; app main file
+    |- fonts/                                    --&gt;fonts
+    |- images/                                   --&gt;images
+</code></pre>
+
+<h2>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
+
+<ul>
+<li>Laravel angular material starter - <a href="https://github.com/jadjoubran/laravel5-angular-material-starter">jadjoubran/laravel5-angular-material-starter</a>
+</li>
+<li>Employee Scheduling UI - <a href="https://github.com/martinmicunda/employee-scheduling-ui">martinmicunda/employee-scheduling-ui</a>
+</li>
+</ul>
+
+<h2>
+<a id="licence" class="anchor" href="#licence" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Licence</h2>
+
+<p>MIT © <a href="kujtimhoxha.com">Kujtim Hoxha</a></p>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/kujtimiihoxha/laravel-ng-ts">laravel-ng-ts</a> is maintained by <a href="https://github.com/kujtimiihoxha">kujtimiihoxha</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
+      </footer>
+
+    </section>
+
+  
+  </body>
+</html>
