@@ -1,513 +1,441 @@
 <!DOCTYPE html>
-<html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>laravel-ng-ts by kujtimiihoxha</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">laravel-ng-ts</h1>
-      <h2 class="project-tagline">Laravel 5.2 Angular 1.5 Typescript  Starter.</h2>
-      <a href="https://github.com/kujtimiihoxha/laravel-ng-ts" class="btn">View on GitHub</a>
-      <a href="https://github.com/kujtimiihoxha/laravel-ng-ts/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/kujtimiihoxha/laravel-ng-ts/tarball/master" class="btn">Download .tar.gz</a>
-    </section>
+<!--[if IE 8]>
+<html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]>
+<html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en"> <!--<![endif]-->
+<head>
+    <title>Free Bootstrap Theme for Developers</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,300italic,400italic' rel='stylesheet'
+          type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css">
+    <!-- Plugins CSS -->
+    <link rel="stylesheet" href="assets/plugins/font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" href="assets/plugins/prism/min/prism.css">
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
 
-    <section class="main-content">
-      <h1>
-<a id="laravel-angular-typescript-starter" class="anchor" href="#laravel-angular-typescript-starter" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Laravel Angular Typescript starter.</h1>
+<body data-spy="scroll">
 
-<p>This project is an attempt to make a good starting point for developers who want to use Angular 1.5 and Laravel 5.2.<br>
-Since Angular 2 is coming in the near future this project is aiming to make the transition to Angular 2 a bit easier with
-typescript integration and custom <code>decorators</code> that use a similar syntax that Angular 2 is using.<br>
-Besides typescript and decorators this project is setup to automatically handle the views and store them in the <code>$templateCashe</code> of the angular app,Depending on the 
-folder placement of the view it will be stored in the same path in the <code>$templateCashe</code> with the <code>./views/</code> prepended.<br>
-The project uses <code>SASS</code> for styling the views, it is configured to automatically compile <code>.scss</code> files and store the concatenated output in <code>public/css/app.css</code>  </p>
+<!-- ******HEADER****** -->
+<header id="header" class="header">
+    <div class="container">
+        <h1 class="logo pull-left">
+            <a class="scrollto" href="#promo">
+                <span class="logo-title">devAid</span>
+            </a>
+        </h1><!--//logo-->
+        <nav id="main-nav" class="main-nav navbar-right" role="navigation">
+            <div class="navbar-header">
+                <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button><!--//nav-toggle-->
+            </div><!--//navbar-header-->
+            <div class="navbar-collapse collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active nav-item sr-only"><a class="scrollto" href="#promo">Home</a></li>
+                    <li class="nav-item"><a class="scrollto" href="#about">About</a></li>
+                    <li class="nav-item"><a class="scrollto" href="#features">Features</a></li>
+                    <li class="nav-item"><a class="scrollto" href="#docs">Docs</a></li>
+                    <li class="nav-item"><a class="scrollto" href="#license">License</a></li>
+                    <li class="nav-item last"><a class="scrollto" href="#contact">Contact</a></li>
+                </ul><!--//nav-->
+            </div><!--//navabr-collapse-->
+        </nav><!--//main-nav-->
+    </div>
+</header><!--//header-->
 
-<p>An example of the custom decorators is the <code>@Component()</code> decorator that is used to create a new angular component similar to Angular 2 components.   </p>
+<!-- ******PROMO****** -->
+<section id="promo" class="promo section offset-header">
+    <div class="container text-center">
+        <h2 class="title">laravle-ng-<span class="highlight">ts</span></h2>
+        <p class="intro">A simple starter for getting up and running with some of the most used web frameworks</p>
+        <div class="btns">
+            <p>Install Yeoman and the Generator</p>
+            <div class="code-block">
+                <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
+                    <pre>
+                        <code class="language-bash">
+                            npm install -g yo
+                            npm install -g generator-laravel-ng-ts
+                        </code>
+                    </pre>
+            </div><!--//code-block-->
+            <p>Create the project</p>
+            <div class="code-block">
+                <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
+                    <pre>
+                        <code class="language-bash">
+                            mkdir my-project
+                            cd my-project
+                            yo laravel-ng-ts
+                        </code>
+                    </pre>
+            </div><!--//code-block-->
+        </div>
+        <ul class="meta list-inline">
+            <li><a href="https://github.com/xriley/devAid-Theme" target="_blank">View on GitHub</a></li>
+            <li><a href="http://themes.3rdwavemedia.com/website-templates/devaid-free-bootstrap-theme-developers/"
+                   target="_blank">Full Documentation</a></li>
+            <li>Created by: <a href="http://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> at 3rd Wave
+                Media
+            </li>
+        </ul><!--//meta-->
+    </div><!--//container-->
+    <div class="social-media">
+        <div class="social-media-inner container text-center">
+            <ul class="list-inline">
+                <li class="twitter-follow"><a href="https://twitter.com/3rdwave_themes" class="twitter-follow-button"
+                                              data-show-count="false">Follow @3rdwave_themes</a>
+                    <script>!function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if (!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + '://platform.twitter.com/widgets.js';
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, 'script', 'twitter-wjs');</script>
+                </li><!--//twitter-follow-->
+                <li class="twitter-tweet">
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-via="3rdwave_themes"
+                       data-hashtags="bootstrap">Tweet</a>
+                    <script>!function (d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if (!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + '://platform.twitter.com/widgets.js';
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, 'script', 'twitter-wjs');</script>
+                </li><!--//twitter-tweet-->
+                <li class="facebook-like">
+                    <div class="fb-like" data-href="http://themes.3rdwavemedia.com/" data-layout="button_count"
+                         data-action="like" data-show-faces="false" data-share="true"></div>
+                </li><!--//facebook-like-->
+                <!--// Generate github buttons: https://github.com/mdo/github-buttons -->
+                <li class="github-star">
+                    <iframe src="http://ghbtns.com/github-btn.html?user=mdo&repo=github-buttons&type=watch&count=true"
+                            allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
+                </li>
+                <li class="github-fork">
+                    <iframe src="http://ghbtns.com/github-btn.html?user=mdo&repo=github-buttons&type=fork"
+                            allowtransparency="true" frameborder="0" scrolling="0" width="53" height="20"></iframe>
+                </li>
+                <!--//
+                <li class="github-follow"><iframe src="http://ghbtns.com/github-btn.html?user=mdo&type=follow&count=true"
+allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></li>
+                -->
+            </ul>
+        </div>
+    </div>
+</section><!--//promo-->
 
-<div class="highlight highlight-source-ts"><pre><span class="pl-k">module</span> App.Components.MainSideBar {
-    <span class="pl-k">import</span> ISettingsModel <span class="pl-k">=</span> App.Models.ISettingsModel;
-    <span class="pl-k">export</span> <span class="pl-k">interface</span> <span class="pl-en">IMenuItem</span> {
-        <span class="pl-v">title</span>: <span class="pl-k">string</span>,
-        <span class="pl-v">icon</span>: <span class="pl-k">string</span>,
-        <span class="pl-v">state</span>: <span class="pl-k">string</span>,
-        <span class="pl-v">children</span> : IMenuItem[]
+<!-- ******ABOUT****** -->
+<section id="about" class="about section">
+    <div class="container">
+        <h2 class="title text-center">What is devAid?</h2>
+        <p class="intro text-center">Explain your project in detail. Ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+            in voluptate.</p>
+        <div class="row">
+            <div class="item col-md-4 col-sm-6 col-xs-12">
+                <div class="icon-holder">
+                    <i class="fa fa-heart"></i>
+                </div>
+                <div class="content">
+                    <h3 class="sub-title">Designed for developers</h3>
+                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the
+                        icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/"
+                                                         target="_blank">FontAwesome</a> icons available.</p>
+                </div><!--//content-->
+            </div><!--//item-->
+            <div class="item col-md-4 col-sm-6 col-xs-12">
+                <div class="icon-holder">
+                    <i class="fa fa-clock-o"></i>
+                </div>
+                <div class="content">
+                    <h3 class="sub-title">Time saver</h3>
+                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the
+                        icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/"
+                                                         target="_blank">FontAwesome</a> icons available.</p>
+                </div><!--//content-->
+            </div><!--//item-->
+            <div class="item col-md-4 col-sm-6 col-xs-12">
+                <div class="icon-holder">
+                    <i class="fa fa-crosshairs"></i>
+                </div>
+                <div class="content">
+                    <h3 class="sub-title">UX-centred</h3>
+                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the
+                        icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/"
+                                                         target="_blank">FontAwesome</a> icons available.</p>
+                </div><!--//content-->
+            </div><!--//item-->
+            <div class="clearfix visible-md"></div>
+            <div class="item col-md-4 col-sm-6 col-xs-12">
+                <div class="icon-holder">
+                    <i class="fa fa-tablet"></i>
+                </div>
+                <div class="content">
+                    <h3 class="sub-title">Mobile-friendly</h3>
+                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the
+                        icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/"
+                                                         target="_blank">FontAwesome</a> icons available.</p>
+                </div><!--//content-->
+            </div><!--//item-->
+            <div class="item col-md-4 col-sm-6 col-xs-12">
+                <div class="icon-holder">
+                    <i class="fa fa-code"></i>
+                </div>
+                <div class="content">
+                    <h3 class="sub-title">Easy to customise</h3>
+                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the
+                        icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/"
+                                                         target="_blank">FontAwesome</a> icons available.</p>
+                </div><!--//content-->
+            </div><!--//item-->
+            <div class="item col-md-4 col-sm-6 col-xs-12">
+                <div class="icon-holder">
+                    <i class="fa fa-coffee"></i>
+                </div>
+                <div class="content">
+                    <h3 class="sub-title">LESS files included</h3>
+                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the
+                        icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/"
+                                                         target="_blank">FontAwesome</a> icons available.</p>
+                </div><!--//content-->
+            </div><!--//item-->
+        </div><!--//row-->
+    </div><!--//container-->
+</section><!--//about-->
+
+<!-- ******FEATURES****** -->
+<section id="features" class="features section">
+    <div class="container text-center">
+        <h2 class="title">Features</h2>
+        <ul class="feature-list list-unstyled">
+            <li><i class="fa fa-check"></i> Fully responsive</li>
+            <li><i class="fa fa-check"></i> HTML5 + CSS3</li>
+            <li><i class="fa fa-check"></i> Built on <a href="http://getbootstrap.com/" target="_blank">Bootstrap
+                3.3</a></li>
+            <li><i class="fa fa-check"></i> 400+ FontAwesome icons</li>
+            <li><i class="fa fa-check"></i> 4 colour schemes</li>
+            <li><i class="fa fa-check"></i> LESS files included</li>
+            <li><i class="fa fa-check"></i> Compatible with all modern browsers</li>
+        </ul>
+    </div><!--//container-->
+</section><!--//features-->
+
+<!-- ******DOCS****** -->
+<section id="docs" class="docs section">
+    <div class="container">
+        <div class="docs-inner">
+            <h2 class="title text-center">Get Started</h2>
+            <div class="block">
+                <h3 class="sub-title text-center">HTML</h3>
+                <p><a href="http://prismjs.com/" target="_blank">PrismJS</a> is used as the syntax highlighter here.</p>
+                <p>Below are the details of the custom PrismJS build used in this template. You can <a
+                        href="http://prismjs.com/download.html" target="_blank">build your own version</a> via their
+                    website should you need to.</p>
+                <ul class="list-unstyled">
+                    <li><strong>Compression level:</strong> Minified</li>
+                    <li><strong>Theme:</strong> Okaidia</li>
+                    <li><strong>Languages:</strong> Markup, CSS, C-like, JavaScript, PHP and Python</li>
+                </ul>
+                <div class="code-block">
+                    <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
+                    <pre><code class="language-markup">
+    &ltp class="my-style"&gt
+      Hello World!
+    &lt/p&gt
+                     </code></pre>
+                </div><!--//code-block-->
+            </div><!--//block-->
+
+            <div class="block">
+                <h3 class="sub-title text-center">CSS</h3>
+                <p>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies
+                    nisi. Nam eget dui. Etiam rhoncus.</p>
+
+                <div class="code-block">
+                    <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
+                    <pre>
+    <code class="language-css">
+    /*   
+     * Template Name: devAid - Responsive Website Template for developers
+     * Version: 1.1
+     * Author: Xiaoying Riley at 3rd Wave Media
+     * Website: http://themes.3rdwavemedia.com/
+     * Twitter: @3rdwave_themes
+    */
+    body {
+      font-family: 'Lato', arial, sans-serif;
+      color: #444444;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
-    @Component({
-            selector: <span class="pl-s">"main-sidebar"</span>,
-            templateUrl: <span class="pl-s">"./views/components/main-sidebar/main-sidebar.template.html"</span>
-            })
-    @Inject(<span class="pl-s">"App.Models.SettingsModel"</span>)
-    <span class="pl-k">class</span> <span class="pl-en">MainSideBarComponent</span> {
-        <span class="pl-k">private</span> <span class="pl-v">menuItems</span>: IMenuItem[];
-        <span class="pl-en">constructor</span>(<span class="pl-v">SettingsModel</span>: ISettingsModel) {
-            <span class="pl-c1">this</span>.menuItems <span class="pl-k">=</span> JSON.parse(SettingsModel.values).items;
-        }
+    </code></pre>
+                </div><!--//code-block-->
+            </div><!--//block-->
+
+            <div class="block">
+                <h3 class="sub-title text-center">JavaScript</h3>
+                <p>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies
+                    nisi. Nam eget dui. Etiam rhoncus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit ligula
+                    eget dolor.</p>
+                <div class="code-block">
+                    <pre><code class="language-javascript">
+    if( awesome ){
+        console.log('This is Awesome');
+    }else{
+        $('body').addClass('give-me-awesome');
     }
-}</pre></div>
+                    </code></pre>
+                </div><!--//code-block-->
+            </div><!--//block-->
+            <div class="block">
+                <h3 class="sub-title text-center">Full Documentation</h3>
+                <p>If your documentation is very long you can host the full docs page (including FAQ etc) on GitHub and
+                    provide a Call to Action button below to direct users there.</p>
+                <p class="text-center">
+                    <a class="btn btn-cta-primary" href="https://github.com/xriley/devAid-Theme" target="_blank">More on
+                        GitHub</a>
+                </p>
+            </div><!--//block-->
+
+        </div><!--//docs-inner-->
+    </div><!--//container-->
+</section><!--//features-->
+
+<!-- ******LICENSE****** -->
+<section id="license" class="license section">
+    <div class="container">
+        <div class="license-inner">
+            <h2 class="title text-center">License</h2>
+            <div class="info">
+                <p>This Bootstrap theme is made by UX designer <a href="https://www.linkedin.com/in/xiaoying"
+                                                                  target="_blank">Xiaoying Riley</a> at 3rd Wave Media
+                    for developers and is <strong>100% FREE</strong> under the <a
+                            href="https://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons
+                        Attribution 3.0 License (CC BY 3.0)</a></p>
+                <p><strong>[Tip for developers]:</strong> If your project is open source, you might want to put a <a
+                        href="https://www.paypal.com/us/cgi-bin/?cmd=_donate-intro-outside" target="_blank">PayPal
+                    "Donate" button</a> below so your users can express their gratitude. If your project is commercial,
+                    you can put a <a href="https://www.paypal.com/us/cgi-bin/webscr?cmd=_singleitem-intro-outside"
+                                     target="_blank">PayPal "Buy Now" button</a> instead.</p>
+            </div><!--//info-->
+            <div class="cta-container">
+                <div class="speech-bubble">
+                    <p class="intro">If you are feeling generous and want to show your support to Xiaoying, you can buy
+                        her a beer or coffee via the PayPal donate button below. :)</p>
+                    <div class="icon-holder  text-center"><i class="fa fa-smile-o"></i></div>
+                </div><!--//speech-bubble-->
+                <div class="btn-container  text-center">
+                    <!--//You need to generate your own PayPal button - https://www.paypal.com/us/cgi-bin/?cmd=_donate-intro-outside -->
+                    <!--PayPal generated code starts-->
+                    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                        <input type="hidden" name="cmd" value="_s-xclick">
+                        <input type="hidden" name="hosted_button_id" value="Y46LJNXGAVVWW">
+                        <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0"
+                               name="submit" alt="PayPal - The safer, easier way to pay online!">
+                        <img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1"
+                             height="1">
+                    </form>
+                    <!--//PayPal generated code ends-->
+
+                </div><!--//btn-container-->
+            </div><!--//cta-container-->
+        </div><!--//license-inner-->
+    </div><!--//container-->
+</section><!--//how-->
+
+<!-- ******CONTACT****** -->
+<section id="contact" class="contact section has-pattern">
+    <div class="container">
+        <div class="contact-inner">
+            <h2 class="title  text-center">Contact</h2>
+            <p class="intro  text-center">I hope you find this Bootstrap template useful. <br/>Feel free to get in touch
+                if you have any questions or suggestions.</p>
+            <div class="author-message">
+                <div class="profile">
+                    <img class="img-responsive" src="assets/images/profile.png" alt=""/>
+                </div><!--//profile-->
+                <div class="speech-bubble">
+                    <h3 class="sub-title">Want to get more freebies in the future?</h3>
+                    <p>I tweet about #UX and #webdev related resources/content at <a
+                            href="https://twitter.com/3rdwave_themes" target="_blank">@3rdwave_themes</a>
+                    <p>If you like what I do, you can follow me on twitter and I will keep you informed about my next
+                        free template there :)</p>
+                    <p><strong>[Tip for developers]:</strong> If you take on freelance work you can put a tailored
+                        message here about your availability to attract potential clients. Be creative and good luck!
+                    </p>
+                    <div class="source">
+                        <span class="name"><a href="https://twitter.com/3rdwave_themes"
+                                              target="_blank">Xiaoying Riley</a></span>
+                        <br/>
+                        <span class="title">UX/UI Designer</span>
+                    </div><!--//source-->
+                </div><!--//speech-bubble-->
+            </div><!--//author-message-->
+            <div class="clearfix"></div>
+            <div class="info text-center">
+                <h4 class="sub-title">Get Connected</h4>
+                <ul class="social-icons list-inline">
+                    <li><a href="https://twitter.com/3rdwave_themes" target="_blank"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li><a href="https://www.facebook.com/3rdwavethemes" target="_blank"><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li><a href="https://www.linkedin.com/in/xiaoying"><i class="fa fa-linkedin"></i></a></li>
+                    <li><a href="http://instagram.com/xyriley"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://dribbble.com/Xiaoying"><i class="fa fa-dribbble"></i></a></li>
+                    <li class="last"><a href="mailto:hello@3rdwavemedia.com"><i class="fa fa-envelope"></i></a></li>
+                </ul>
+            </div><!--//info-->
+        </div><!--//contact-inner-->
+    </div><!--//container-->
+</section><!--//contact-->
+
+<!-- ******FOOTER****** -->
+<footer class="footer">
+    <div class="container text-center">
+        <!--/* This template is released under the Creative Commons Attribution 3.0 License. Please keep the attribution link below when using for your own project. Thank you for your support. :) If you'd like to use the template without the attribution, you can check out other license options via our website: themes.3rdwavemedia.com */-->
+        <small class="copyright">Designed with <i class="fa fa-heart"></i> by <a href="http://themes.3rdwavemedia.com"
+                                                                                 target="_blank">Xiaoying Riley</a> for
+            developers
+        </small>
+    </div><!--//container-->
+</footer><!--//footer-->
+
+<!-- Javascript -->
+<script type="text/javascript" src="assets/plugins/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery.easing.1.3.js"></script>
+<script type="text/javascript" src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="assets/plugins/jquery-scrollTo/jquery.scrollTo.min.js"></script>
+<script type="text/javascript" src="assets/plugins/prism/min/prism.js"></script>
+<script type="text/javascript" src="assets/js/main.js"></script>
+</body>
+</html> 
 
-<p>This example shows how you can easily create and register components using <code>@Component</code> decorator.
-Also you can notice the <code>@Inject</code> decorator that is used to inject injectable factory methods or constructor functions.</p>
-
-<h2>
-<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
-
-<div class="highlight highlight-source-shell"><pre>npm install -g yo
-npm install -g generator-laravel-ng-ts</pre></div>
-
-<h2>
-<a id="create-the-project" class="anchor" href="#create-the-project" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Create the project</h2>
-
-<div class="highlight highlight-source-shell"><pre>mkdir my-project
-<span class="pl-c1">cd</span> my-project
-yo laravel-ng-ts</pre></div>
-
-<h2>
-<a id="prepare-the-app" class="anchor" href="#prepare-the-app" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Prepare the app</h2>
-
-<p>Change the <code>.env</code> file and add your database credentials.
-Run: </p>
-
-<pre><code>php artisan migrate
-php artisan db:seed
-</code></pre>
-
-<h2>
-<a id="running-the-app" class="anchor" href="#running-the-app" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running the app</h2>
-
-<p>Open two terminal windows and navigate to the folder where you 
-project is saved , than in one terminal window run:</p>
-
-<div class="highlight highlight-source-shell"><pre>gulp <span class="pl-k">&amp;&amp;</span> gulp watch</pre></div>
-
-<p>and the other : </p>
-
-<div class="highlight highlight-source-shell"><pre>php artisan serve</pre></div>
-
-<p>after both tasks are running go to </p>
-
-<pre><code>http://localhost:8000
-</code></pre>
-
-<p>login to dashboard </p>
-
-<pre><code>go to  http://localhost:8000/#/auth/login
-
-email: abc@gmail.com
-pass: abc@12345
-</code></pre>
-
-<h3>
-<a id="supported-decorators" class="anchor" href="#supported-decorators" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Supported decorators</h3>
-
-<ul>
-<li> <code>@Component</code>  - to generate components use <code>laravel-ng-ts:component [component-name]</code>
-</li>
-<li> <code>@Service</code>    - to generate services use <code>laravel-ng-ts:service [service-name]</code>
-</li>
-<li> <code>@Config</code>     - to generate a config function use <code>laravel-ng-ts:config [config-name]</code>
-</li>
-<li> <code>@Constant</code>   - to generate a constant use <code>laravel-ng-ts:constant [constant-name]</code>
-</li>
-<li> <code>@Filter</code>     - to generate a filter function use <code>laravel-ng-ts:filter [filter-name]</code>
-</li>
-<li> <code>@RouteConfig</code> - to generate a route use <code>laravel-ng-ts:route [state] [route-url] [route-name] [path](optional)</code>
-</li>
-<li> <code>@Inject</code>
-</li>
-<li> <code>@Run</code>         - to generate a run function use <code>laravel-ng-ts:filter [run-name]</code>
-</li>
-<li> <code>@Directive</code>   - it is recommended to use component, you can use directives similar to components. </li>
-<li> <code>@Describe</code>    - to generate a unit tests use <code>laravel-ng-ts:describe [describe-name]</code>
-</li>
-</ul>
-
-<p>To find out more about the generators see   <a href="https://github.com/kujtimiihoxha/generator-laravel-ng-ts">kujtimiihoxha/generator-laravel-ng-ts</a>.</p>
-
-<h2>
-<a id="component" class="anchor" href="#component" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/Component" class="user-mention">@Component</a>()</h2>
-
-<p>The component decorator accepts an object with the type of <code>App.Decorators.IComponentOptions</code> that extends <code>angular.IComponentOptions</code>
-the only additional field that is added is the <code>selector</code> field.</p>
-
-<p><strong>IComponentOptions</strong></p>
-
-<div class="highlight highlight-source-ts"><pre> <span class="pl-c">/**</span>
-<span class="pl-c">     * Component definition object (a simplified directive definition object)</span>
-<span class="pl-c">     */</span>
-    <span class="pl-k">interface</span> <span class="pl-en">IComponentOptions</span> {
-        <span class="pl-c">/**</span>
-<span class="pl-c">         * The html5 tag of the component</span>
-<span class="pl-c">         */</span>
-        <span class="pl-v">selector</span>: <span class="pl-k">string</span>
-        <span class="pl-c">/**</span>
-<span class="pl-c">         * Controller constructor function that should be associated with newly created scope or the name of a registered</span>
-<span class="pl-c">         * controller if passed as a string. Empty function by default.</span>
-<span class="pl-c">         * Use the array form to define dependencies (necessary if strictDi is enabled and you require dependency injection)</span>
-<span class="pl-c">         */</span>
-        <span class="pl-v">controller</span><span class="pl-k">?</span>: <span class="pl-k">string</span> <span class="pl-k">|</span> Function <span class="pl-k">|</span> (<span class="pl-k">string</span> <span class="pl-k">|</span> Function)[];
-        <span class="pl-c">/**</span>
-<span class="pl-c">         * An identifier name for a reference to the controller. If present, the controller will be published to scope under</span>
-<span class="pl-c">         * the controllerAs name. If not present, this will default to be the same as the component name.</span>
-<span class="pl-c">         * @default "$ctrl"</span>
-<span class="pl-c">         */</span>
-        <span class="pl-v">controllerAs</span><span class="pl-k">?</span>: <span class="pl-k">string</span>;
-        <span class="pl-c">/**</span>
-<span class="pl-c">         * html template as a string or a function that returns an html template as a string which should be used as the</span>
-<span class="pl-c">         * contents of this component. Empty string by default.</span>
-<span class="pl-c">         * If template is a function, then it is injected with the following locals:</span>
-<span class="pl-c">         * $element - Current element</span>
-<span class="pl-c">         * $attrs - Current attributes object for the element</span>
-<span class="pl-c">         * Use the array form to define dependencies (necessary if strictDi is enabled and you require dependency injection)</span>
-<span class="pl-c">         */</span>
-        <span class="pl-v">template</span><span class="pl-k">?</span>: <span class="pl-k">string</span> <span class="pl-k">|</span> Function <span class="pl-k">|</span> (<span class="pl-k">string</span> <span class="pl-k">|</span> Function)[];
-        <span class="pl-c">/**</span>
-<span class="pl-c">         * path or function that returns a path to an html template that should be used as the contents of this component.</span>
-<span class="pl-c">         * If templateUrl is a function, then it is injected with the following locals:</span>
-<span class="pl-c">         * $element - Current element</span>
-<span class="pl-c">         * $attrs - Current attributes object for the element</span>
-<span class="pl-c">         * Use the array form to define dependencies (necessary if strictDi is enabled and you require dependency injection)</span>
-<span class="pl-c">         */</span>
-        <span class="pl-v">templateUrl</span><span class="pl-k">?</span>: <span class="pl-k">string</span> <span class="pl-k">|</span> Function <span class="pl-k">|</span> (<span class="pl-k">string</span> <span class="pl-k">|</span> Function)[];
-        <span class="pl-c">/**</span>
-<span class="pl-c">         * Define DOM attribute binding to component properties. Component properties are always bound to the component</span>
-<span class="pl-c">         * controller and not to the scope.</span>
-<span class="pl-c">         */</span>
-        <span class="pl-v">bindings</span><span class="pl-k">?</span>: {[binding: <span class="pl-k">string</span>]: <span class="pl-k">string</span>};
-        <span class="pl-c">/**</span>
-<span class="pl-c">         * Whether transclusion is enabled. Enabled by default.</span>
-<span class="pl-c">         */</span>
-        <span class="pl-v">transclude</span><span class="pl-k">?</span>: <span class="pl-k">boolean</span> <span class="pl-k">|</span> <span class="pl-k">string</span> <span class="pl-k">|</span> {[slot: <span class="pl-k">string</span>]: <span class="pl-k">string</span>};
-        <span class="pl-v">require</span><span class="pl-k">?</span>: <span class="pl-k">string</span> <span class="pl-k">|</span> <span class="pl-k">string</span>[] <span class="pl-k">|</span> {[controller: <span class="pl-k">string</span>]: <span class="pl-k">string</span>};
-    }</pre></div>
-
-<h2>
-<a id="routeconfig" class="anchor" href="#routeconfig" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/RouteConfig" class="user-mention">@RouteConfig</a>()</h2>
-
-<p>The RouteConfig decorator makes it very easy register routes and route corresponding controllers it uses <code>ui-router</code> 
-and all the options that <code>ui-router</code> provides. RouteConfig automatically registers the target(class) of the decorator as the route controller. 
-Routes also are configured to support user access levels.<br>
-Example: </p>
-
-<div class="highlight highlight-source-ts"><pre><span class="pl-k">module</span> App.Routes.LayoutAdmin.Home {
-    <span class="pl-k">import</span> AccessLevels <span class="pl-k">=</span> App.Core.Constants.AccessLevels;
-
-    @RouteConfig(<span class="pl-s">"admin.dashboard"</span>, {
-        url: <span class="pl-s">"/dashboard"</span>,
-        data: {
-            access: AccessLevels.admin
-        },
-        templateUrl: <span class="pl-s">"./views/routes/layout-admin/dashboard/dashboard.html"</span>
-    })
-    <span class="pl-k">class</span> <span class="pl-en">Home</span> {
-        <span class="pl-k">private</span> <span class="pl-v">usr</span>: {};
-        <span class="pl-v">panels</span>: <span class="pl-k">any</span>[];
-        <span class="pl-v">lineChart</span>: <span class="pl-k">any</span>;
-        <span class="pl-v">pieChart</span>: <span class="pl-k">any</span>;
-        <span class="pl-v">doughnutChart</span>: <span class="pl-k">any</span>;
-        <span class="pl-en">constructor</span>() {
-            <span class="pl-c1">this</span>.addMockPanels();
-            <span class="pl-c1">this</span>.addMockLineChart();
-            <span class="pl-c1">this</span>.addMockPieChar();
-            <span class="pl-c1">this</span>.addMockdoughnutChar();
-        }
-
-        <span class="pl-en">addMockPanels</span>(): <span class="pl-k">void</span> {
-            <span class="pl-c1">this</span>.panels <span class="pl-k">=</span> [];
-            <span class="pl-c1">this</span>.panels.push({
-                title: <span class="pl-s">"NEW USERS"</span>,
-                value: <span class="pl-c1">26</span>,
-                bodyClass: <span class="pl-s">"text-light bk-primary"</span>,
-                link: <span class="pl-s">"#"</span>,
-                linkText: <span class="pl-s">"Full Details Hello"</span>
-            });
-            <span class="pl-c1">this</span>.panels.push({
-                title: <span class="pl-s">"SUPPORT TICKETS"</span>,
-                value: <span class="pl-c1">8</span>,
-                bodyClass: <span class="pl-s">"text-light bk-success"</span>,
-                link: <span class="pl-s">"#"</span>,
-                linkText: <span class="pl-s">"See All"</span>
-            });
-            <span class="pl-c1">this</span>.panels.push({
-                title: <span class="pl-s">"NEW ORDERS"</span>,
-                value: <span class="pl-c1">58</span>,
-                bodyClass: <span class="pl-s">"text-light bk-info"</span>,
-                link: <span class="pl-s">"#"</span>,
-                linkText: <span class="pl-s">"See All"</span>
-            });
-            <span class="pl-c1">this</span>.panels.push({
-                title: <span class="pl-s">"NEW COMMENTS"</span>,
-                value: <span class="pl-c1">18</span>,
-                bodyClass: <span class="pl-s">"text-light bk-warning"</span>,
-                link: <span class="pl-s">"#"</span>,
-                linkText: <span class="pl-s">"See All"</span>
-            });
-        }
-
-        <span class="pl-en">addMockLineChart</span>() {
-            <span class="pl-c1">this</span>.lineChart <span class="pl-k">=</span> {
-                id: <span class="pl-s">"lineChartExample"</span>,
-                height: <span class="pl-c1">310</span>,
-                width: <span class="pl-c1">600</span>
-            };
-        }
-
-        <span class="pl-en">addMockPieChar</span>() {
-            <span class="pl-c1">this</span>.pieChart <span class="pl-k">=</span> {
-                id: <span class="pl-s">"pieCharExample"</span>,
-                height: <span class="pl-c1">1200</span>,
-                width: <span class="pl-c1">900</span>
-            };
-        }
-
-        <span class="pl-en">addMockdoughnutChar</span>() {
-            <span class="pl-c1">this</span>.doughnutChart <span class="pl-k">=</span> {
-                id: <span class="pl-s">"doughnutCharExample"</span>,
-                height: <span class="pl-c1">1200</span>,
-                width: <span class="pl-c1">900</span>
-            }
-        }
-    }
-}
-</pre></div>
-
-<h2>
-<a id="service" class="anchor" href="#service" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/Service" class="user-mention">@Service</a>()</h2>
-
-<p>The service decorator is used to register a service to the app. It accepts an object the type of <code>App.Decorators.IServiceOptions</code>  with the name of the service.</p>
-
-<p><strong>IServiceOptions</strong></p>
-
-<div class="highlight highlight-source-ts"><pre> <span class="pl-k">interface</span> <span class="pl-en">IServiceOptions</span> {
-        <span class="pl-c">/**</span>
-<span class="pl-c">         * The name of the service</span>
-<span class="pl-c">         */</span>
-        <span class="pl-v">serviceName</span>: <span class="pl-k">string</span>;
-    }</pre></div>
-
-<p>Example:</p>
-
-<div class="highlight highlight-source-ts"><pre><span class="pl-k">module</span> App.Core.Services {
-    <span class="pl-k">import</span> IPromise <span class="pl-k">=</span> restangular.IPromise;
-    <span class="pl-k">import</span> IAuthModule <span class="pl-k">=</span> App.Core.Models.AuthModel;
-    <span class="pl-k">import</span> UserRoles <span class="pl-k">=</span> App.Core.Constants.UserRoles;
-
-    <span class="pl-k">export</span> <span class="pl-k">interface</span> <span class="pl-en">IAuthService</span> {
-        <span class="pl-en">login</span>(<span class="pl-v">user</span>: IAuthModule.ILoginModel): <span class="pl-en">IPromise</span>&lt;<span class="pl-k">any</span>&gt;;
-        <span class="pl-en">register</span>(<span class="pl-v">user</span>: IAuthModule.IRegisterModel): <span class="pl-en">IPromise</span>&lt;<span class="pl-k">any</span>&gt;;
-        <span class="pl-en">logout</span>(): <span class="pl-en">IPromise</span>&lt;<span class="pl-k">any</span>&gt;;
-        <span class="pl-en">isAuthenticated</span>(): <span class="pl-k">boolean</span>
-        <span class="pl-en">isAuthorized</span>(<span class="pl-v">access</span>: UserRoles[]): <span class="pl-k">boolean</span>;
-        <span class="pl-en">getCurrentUser</span>(): <span class="pl-k">any</span>;
-    }
-    @Service({
-        serviceName: <span class="pl-s">"App.Core.Services.AuthService"</span>
-    })
-    @Inject(<span class="pl-s">"$auth"</span>, <span class="pl-s">"$localStorage"</span>)
-    <span class="pl-k">class</span> <span class="pl-en">AuthService</span> <span class="pl-k">implements</span> <span class="pl-k">IAuthService</span> {
-        <span class="pl-en">constructor</span>(<span class="pl-k">private</span> <span class="pl-v">$auth</span>: <span class="pl-k">any</span>, <span class="pl-k">private</span> <span class="pl-v">$localStorage</span>: <span class="pl-k">any</span>) {}
-        <span class="pl-en">login</span>(<span class="pl-v">user</span>: IAuthModule.ILoginModel): <span class="pl-en">IPromise</span>&lt;<span class="pl-k">any</span>&gt; {
-            <span class="pl-k">const</span> <span class="pl-v">storage</span> = <span class="pl-c1">this</span>.$localStorage;
-            <span class="pl-k">return</span> <span class="pl-c1">this</span>.$auth.login(user).then((response: <span class="pl-k">any</span>) <span class="pl-k">=&gt;</span> {
-                storage[<span class="pl-s">"user"</span>] <span class="pl-k">=</span> response.data.data.user;
-            });
-        }
-        <span class="pl-en">register</span>(<span class="pl-v">user</span>: IAuthModule.IRegisterModel): <span class="pl-en">IPromise</span>&lt;<span class="pl-k">any</span>&gt; {
-            <span class="pl-k">return</span> <span class="pl-c1">this</span>.$auth.signup(user);
-        }
-        <span class="pl-en">logout</span>(): <span class="pl-en">IPromise</span>&lt;<span class="pl-k">any</span>&gt; {
-            <span class="pl-k">const</span> <span class="pl-v">storage</span> = <span class="pl-c1">this</span>.$localStorage;
-            <span class="pl-k">return</span> <span class="pl-c1">this</span>.$auth.logout().then(() <span class="pl-k">=&gt;</span> {
-                storage[<span class="pl-s">"user"</span>] <span class="pl-k">=</span> <span class="pl-c1">null</span>;
-            });
-        }
-        <span class="pl-en">isAuthenticated</span>(): <span class="pl-k">boolean</span> {
-            <span class="pl-k">return</span> <span class="pl-k">!!</span><span class="pl-c1">this</span>.$auth.getToken();
-        }
-        <span class="pl-en">getCurrentUser</span>(): <span class="pl-k">any</span> {
-            <span class="pl-k">if</span> (<span class="pl-c1">this</span>.$localStorage[<span class="pl-s">"user"</span>] <span class="pl-k">==</span> <span class="pl-c1">null</span>) {
-                <span class="pl-k">return</span> { role: Core.Constants.UserRoles.Guest }
-            } <span class="pl-k">else</span> {
-                <span class="pl-k">return</span> <span class="pl-c1">this</span>.$localStorage[<span class="pl-s">"user"</span>];
-            }
-        }
-        <span class="pl-en">isAuthorized</span>(<span class="pl-v">access</span>: UserRoles[]): <span class="pl-k">boolean</span> {
-            <span class="pl-k">if</span> (access.indexOf(UserRoles.Guest) <span class="pl-k">!==</span> <span class="pl-k">-</span><span class="pl-c1">1</span>) {
-                <span class="pl-k">return</span> <span class="pl-c1">true</span>;
-            }
-            <span class="pl-k">return</span> (<span class="pl-c1">this</span>.isAuthenticated() <span class="pl-k">&amp;&amp;</span> access.indexOf(<span class="pl-c1">this</span>.getCurrentUser().role) <span class="pl-k">!==</span> <span class="pl-k">-</span><span class="pl-c1">1</span>);
-        }
-    }
-}</pre></div>
-
-<h2>
-<a id="config" class="anchor" href="#config" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/Config" class="user-mention">@Config</a>()</h2>
-
-<p>The config decorator is used to register a function that will be executed in the config stage of the angular app;
-Example:</p>
-
-<div class="highlight highlight-source-ts"><pre><span class="pl-k">module</span> App.Core.Configs {
-    <span class="pl-s">"use strict"</span>;
-    <span class="pl-k">import</span> IUrlRouterProvider <span class="pl-k">=</span> angular.ui.IUrlRouterProvider;
-    <span class="pl-k">import</span> ILocationProvider <span class="pl-k">=</span> angular.ILocationProvider;
-    <span class="pl-k">class</span>  <span class="pl-en">CoreConfig</span> {
-        @<span class="pl-en">Config</span>()
-        @<span class="pl-en">Inject</span>("<span class="pl-v">$provide</span>", "<span class="pl-v">$locationProvider</span>",  "<span class="pl-v">$urlRouterProvider</span>","<span class="pl-v">$localStorageProvider</span>")
-        private static <span class="pl-en">config</span>(<span class="pl-v">$provide</span>: <span class="pl-k">any</span>, <span class="pl-v">$locationProvider</span>: ILocationProvider , <span class="pl-v">$urlRouterProvider</span>: IUrlRouterProvider, <span class="pl-v">$localStorageProvider</span>: <span class="pl-k">any</span>) {
-            $provide.decorator(<span class="pl-s">"$uiViewScroll"</span>, [<span class="pl-s">"$delegate"</span>, <span class="pl-s">"$window"</span>, ($delegate: <span class="pl-k">any</span>, $window: <span class="pl-k">any</span>) <span class="pl-k">=&gt;</span> () <span class="pl-k">=&gt;</span> {
-                $window.scrollTo(<span class="pl-c1">0</span>, <span class="pl-c1">0</span>);
-            }]);
-            $urlRouterProvider.otherwise(<span class="pl-s">"/"</span>);
-            <span class="pl-k">if</span> (angular.isUndefined($localStorageProvider[<span class="pl-s">"user"</span>])) {
-                $localStorageProvider[<span class="pl-s">"user"</span>] <span class="pl-k">=</span> <span class="pl-c1">null</span>;
-            }
-        }
-    }
-}</pre></div>
-
-<h2>
-<a id="run" class="anchor" href="#run" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/Run" class="user-mention">@Run</a>()</h2>
-
-<p>The run decorator is used to register a function that will be executed in the run stage of the angular app;
-Example:</p>
-
-<div class="highlight highlight-source-ts"><pre><span class="pl-k">module</span> App.Core.Runs {
-    <span class="pl-s">"use strict"</span>;
-    <span class="pl-k">import</span> IAuthService <span class="pl-k">=</span> App.Core.Services.IAuthService;
-    <span class="pl-k">import</span> AccessLevels <span class="pl-k">=</span> App.Core.Constants.AccessLevels;
-    <span class="pl-k">class</span>  <span class="pl-en">CoreRun</span> {
-        @<span class="pl-en">Run</span>()
-        @<span class="pl-en">Inject</span>( "<span class="pl-v">$rootScope</span>", "<span class="pl-v">$state</span>", "<span class="pl-v">App</span>.<span class="pl-v">Core</span>.<span class="pl-v">Services</span>.<span class="pl-v">AuthService</span>")
-        private static <span class="pl-en">run</span>(<span class="pl-v">$rootScope</span>: <span class="pl-k">any</span>, <span class="pl-v">$state</span>: <span class="pl-k">any</span>, <span class="pl-v">authenticationService</span>: IAuthService) {
-            $rootScope.currentUser <span class="pl-k">=</span> authenticationService.getCurrentUser();
-            $rootScope.AccessLevels <span class="pl-k">=</span> AccessLevels;
-            $rootScope.$on(<span class="pl-s">"$stateChangeStart"</span>, (event: <span class="pl-k">any</span>, toState: <span class="pl-k">any</span>) <span class="pl-k">=&gt;</span> {
-                <span class="pl-k">if</span> (<span class="pl-k">!</span>(<span class="pl-s">"data"</span> <span class="pl-k">in</span> toState) <span class="pl-k">||</span> <span class="pl-k">!</span>(<span class="pl-s">"access"</span> <span class="pl-k">in</span> toState.data)) {
-                    event.preventDefault();
-                    $state.go(<span class="pl-s">"403"</span>);
-                } <span class="pl-k">else</span> <span class="pl-k">if</span> (<span class="pl-k">!</span>authenticationService.isAuthorized(toState.data.access) <span class="pl-k">&amp;&amp;</span> toState.name <span class="pl-k">!==</span> <span class="pl-s">"auth.login"</span>) {
-                    event.preventDefault();
-                      <span class="pl-k">if</span> (authenticationService.isAuthenticated()) {
-                        $state.go(<span class="pl-s">"403"</span>);
-                    } <span class="pl-k">else</span> {
-                        $state.go(<span class="pl-s">"auth.login"</span>);
-                    }
-                } <span class="pl-k">else</span> <span class="pl-k">if</span> (authenticationService.isAuthenticated() <span class="pl-k">&amp;&amp;</span> toState.url <span class="pl-k">===</span> <span class="pl-s">"/"</span>) {
-                    event.preventDefault();
-                    $state.go(<span class="pl-s">"admin.dashboard"</span>);
-                }
-            });
-        }
-    }
-}</pre></div>
-
-<h2>
-<a id="describe" class="anchor" href="#describe" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a><a href="https://github.com/Describe" class="user-mention">@Describe</a>()</h2>
-
-<p>Is used for unit testing, the project uses <a href="https://github.com/kensho/ng-describe">ng-describe</a>, all the options from this 
-repository can be used in the decorator.</p>
-
-<p>Example: </p>
-
-<pre><code>module App.Tests {
-    class AppTest {
-        @Describe({
-            name: "First Test"
-        })
-        static tests(deps: any) {
-            it("Should do something", () =&gt; {
-                expect(2).toBe(2);
-            });
-        }
-    }
-}
-</code></pre>
-
-<p><strong>If you create your own classes and they have dependencies on other classes do not forget to add a <code>ref</code> comment on the top 
-of the class so after the concatenation the order of the classes that are put to the <code>app.js</code> is right. You can se an example in the <code>SettingsModel</code> class</strong></p>
-
-<h2>
-<a id="folder-structure" class="anchor" href="#folder-structure" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Folder Structure</h2>
-
-<h4>
-<a id="backend" class="anchor" href="#backend" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Backend</h4>
-
-<ul>
-<li>The backend folder structure is the same as the standard laravel folder structure.</li>
-</ul>
-
-<h4>
-<a id="frontend" class="anchor" href="#frontend" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Frontend</h4>
-
-<ul>
-<li>All the frontend files are in the  <code>client/</code> , <code>gulp</code> and <code>theme</code> folders.</li>
-</ul>
-
-<h5>
-<a id="client-folder-" class="anchor" href="#client-folder-" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Client folder :</h5>
-
-<pre><code>client/
-    |- app/                                      --&gt; source code folder
-    |   |- components/                              --&gt; angular components
-    |   |- config/                                  --&gt; angular config
-    |   |- constants/                               --&gt; angular constants
-    |   |- core/                                    --&gt; core files(config,run,core-services etc.)
-    |   |   |- config/                                  --&gt; core configurations folder
-    |   |   |   |- core.config.ts                           --&gt; some necessary configurations
-    |   |   |   |- loading-bar.config.ts                    --&gt; loading bar configurations
-    |   |   |   |- satellizer.config.ts                     --&gt; satellizer cofigurations
-    |   |   |- constants/                               --&gt; core constants folder
-    |   |   |   |- core.constant.ts                         --&gt; some necessary configurations
-    |   |   |- models/                                  --&gt; core models folder
-    |   |   |   |- auth.model.ts                            --&gt; login and register user models
-    |   |   |   |- base.model.ts                            --&gt; base model that all resource models inherit
-    |   |   |- resources/                               --&gt; core resources folder
-    |   |   |   |- base.resource.ts                         --&gt; base resource that all resources inherit
-    |   |   |- run/                                     --&gt; core run configurations folder
-    |   |   |   |- core.run.ts                         --&gt; base resource that all resources inherit
-    |   |   |- services/                                --&gt; core services
-    |   |   |   |- api.service.ts                         --&gt; setup restangular api to work with jwt and our api
-    |   |   |   |- auth.service.ts                        --&gt; authentication service to handle user session, login, logout, register
-    |   |- models/                                  --&gt; models used by the resources to get objects from the api
-    |   |- resources/                               --&gt; resources to comunicate with the api
-    |   |- routes/                                  --&gt; app routes
-    |   |- run/                                     --&gt; app run
-    |   |- services/                                --&gt; app services
-    |   |- app.decorators.ts                        --&gt; app decorators
-    |   |- app.main.ts                              --&gt; app main file
-    |- fonts/                                    --&gt;fonts
-    |- images/                                   --&gt;images
-</code></pre>
-
-<h2>
-<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h2>
-
-<ul>
-<li>Laravel angular material starter - <a href="https://github.com/jadjoubran/laravel5-angular-material-starter">jadjoubran/laravel5-angular-material-starter</a>
-</li>
-<li>Employee Scheduling UI - <a href="https://github.com/martinmicunda/employee-scheduling-ui">martinmicunda/employee-scheduling-ui</a>
-</li>
-</ul>
-
-<h2>
-<a id="licence" class="anchor" href="#licence" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Licence</h2>
-
-<p>MIT © <a href="kujtimhoxha.com">Kujtim Hoxha</a></p>
-
-      <footer class="site-footer">
-        <span class="site-footer-owner"><a href="https://github.com/kujtimiihoxha/laravel-ng-ts">laravel-ng-ts</a> is maintained by <a href="https://github.com/kujtimiihoxha">kujtimiihoxha</a>.</span>
-
-        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
-      </footer>
-
-    </section>
-
-  
-  </body>
-</html>
