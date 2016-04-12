@@ -6,7 +6,7 @@
 <!--[if !IE]><!-->
 <html lang="en"> <!--<![endif]-->
 <head>
-    <title>Free Bootstrap Theme for Developers</title>
+    <title>Laravel Angular Typescript Starter</title>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="assets/plugins/prism/min/prism.css">
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/styles.css">
+    <link id="theme-style" rel="stylesheet" href="assets/css/app.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -32,13 +33,13 @@
 </head>
 
 <body data-spy="scroll">
-
 <!-- ******HEADER****** -->
 <header id="header" class="header">
+    <a href="https://github.com/kujtimiihoxha/laravel-ng-ts"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
     <div class="container">
         <h1 class="logo pull-left">
             <a class="scrollto" href="#promo">
-                <span class="logo-title">devAid</span>
+                <span class="logo-title">laravelNgTs</span>
             </a>
         </h1><!--//logo-->
         <nav id="main-nav" class="main-nav navbar-right" role="navigation">
@@ -70,124 +71,113 @@
         <h2 class="title">laravle-ng-<span class="highlight">ts</span></h2>
         <p class="intro">A simple starter for getting up and running with some of the most used web frameworks</p>
         <div class="btns">
-            <p>Install Yeoman and the Generator</p>
-            <div class="code-block">
-                <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
+            <div class="row">
+                <div class="col-lg-6">
+                    <p>Install Yeoman and the Generator</p>
+                    <div class="code-block">
+                        <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
                     <pre>
-                        <code class="language-bash">
-                            npm install -g yo
-                            npm install -g generator-laravel-ng-ts
-                        </code>
+<code class="language-bash">npm install -g yo
+npm install -g generator-laravel-ng-ts</code>
                     </pre>
-            </div><!--//code-block-->
-            <p>Create the project</p>
-            <div class="code-block">
-                <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
+                    </div><!--//code-block-->
+                    <p>Prepare the project</p>
+                    <div class="code-block">
+                        <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
                     <pre>
-                        <code class="language-bash">
-                            mkdir my-project
-                            cd my-project
-                            yo laravel-ng-ts
-                        </code>
+<code class="language-bash">php artisan migrate
+php artisan db:seed</code>
                     </pre>
-            </div><!--//code-block-->
-            <p>Prepare the project</p>
-            <div class="code-block">
-                <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
+                    </div><!--//code-block-->
+
+
+                </div>
+                <div class="col-lg-6">
+                    <p>Create the project</p>
+                    <div class="code-block">
+                        <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
                     <pre>
-                        <code class="language-bash">
-                            php artisan migrate
-                            php artisan db:seed
-                        </code>
+<code class="language-bash">mkdir my-project
+cd my-project
+yo laravel-ng-ts</code>
                     </pre>
-            </div><!--//code-block-->
-            <p>Run and watch changes on the frontend side</p>
-            <div class="code-block">
-                <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
+                    </div><!--//code-block-->
+                    <p>Run and watch changes on the frontend side then run the backend server</p>
+                    <div class="code-block">
+                        <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
                     <pre>
-                        <code class="language-bash">
-                            gulp && gulp watch
-                        </code>
+<code class="language-bash">gulp && gulp watch
+php artisan serve</code>
                     </pre>
-            </div><!--//code-block-->
-            <p>Run the backend server</p>
-            <div class="code-block">
-                <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
-                    <pre>
-                        <code class="language-bash">
-                            php artisan serve
-                        </code>
-                    </pre>
-            </div><!--//code-block-->
-            <p>Now navigate to <a href="http://localhost:8000" target="_blank">http://localhost:8000</a> </p>
+                    </div><!--//code-block-->
+
+                </div>
+                <p>Now navigate to <a href="http://localhost:8000" style="color: white;" target="_blank">http://localhost:8000</a> </p>
+
+            </div>
         </div>
         <ul class="meta list-inline">
-            <li><a href="https://github.com/xriley/devAid-Theme" target="_blank">View on GitHub</a></li>
-            <li><a href="http://themes.3rdwavemedia.com/website-templates/devaid-free-bootstrap-theme-developers/"
-                   target="_blank">Full Documentation</a></li>
-            <li>Created by: <a href="http://themes.3rdwavemedia.com/" target="_blank">Xiaoying Riley</a> at 3rd Wave
-                Media
+            <li><a href="https://github.com/kujtimiihoxha/laravel-ng-ts/tree/master" target="_blank">View on GitHub</a></li>
+            <li>Created by: <a href="https://github.com/kujtimiihoxha" target="_blank">Kujtim Hoxha</a>
             </li>
         </ul><!--//meta-->
     </div><!--//container-->
-    <div class="social-media">
-        <div class="social-media-inner container text-center">
-            <ul class="list-inline">
-                <li class="twitter-follow"><a href="https://twitter.com/3rdwave_themes" class="twitter-follow-button"
-                                              data-show-count="false">Follow @3rdwave_themes</a>
-                    <script>!function (d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-                        if (!d.getElementById(id)) {
-                            js = d.createElement(s);
-                            js.id = id;
-                            js.src = p + '://platform.twitter.com/widgets.js';
-                            fjs.parentNode.insertBefore(js, fjs);
-                        }
-                    }(document, 'script', 'twitter-wjs');</script>
-                </li><!--//twitter-follow-->
-                <li class="twitter-tweet">
-                    <a href="https://twitter.com/share" class="twitter-share-button" data-via="3rdwave_themes"
-                       data-hashtags="bootstrap">Tweet</a>
-                    <script>!function (d, s, id) {
-                        var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
-                        if (!d.getElementById(id)) {
-                            js = d.createElement(s);
-                            js.id = id;
-                            js.src = p + '://platform.twitter.com/widgets.js';
-                            fjs.parentNode.insertBefore(js, fjs);
-                        }
-                    }(document, 'script', 'twitter-wjs');</script>
-                </li><!--//twitter-tweet-->
-                <li class="facebook-like">
-                    <div class="fb-like" data-href="http://themes.3rdwavemedia.com/" data-layout="button_count"
-                         data-action="like" data-show-faces="false" data-share="true"></div>
-                </li><!--//facebook-like-->
-                <!--// Generate github buttons: https://github.com/mdo/github-buttons -->
-                <li class="github-star">
-                    <iframe src="http://ghbtns.com/github-btn.html?user=mdo&repo=github-buttons&type=watch&count=true"
-                            allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>
-                </li>
-                <li class="github-fork">
-                    <iframe src="http://ghbtns.com/github-btn.html?user=mdo&repo=github-buttons&type=fork"
-                            allowtransparency="true" frameborder="0" scrolling="0" width="53" height="20"></iframe>
-                </li>
-                <!--//
-                <li class="github-follow"><iframe src="http://ghbtns.com/github-btn.html?user=mdo&type=follow&count=true"
-allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></li>
-                -->
-            </ul>
-        </div>
-    </div>
+    <!--<div class="social-media">-->
+        <!--<div class="social-media-inner container text-center">-->
+            <!--<ul class="list-inline">-->
+                <!--<li class="twitter-follow"><a href="https://twitter.com/3rdwave_themes" class="twitter-follow-button"-->
+                                              <!--data-show-count="false">Follow @3rdwave_themes</a>-->
+                    <!--<script>!function (d, s, id) {-->
+                        <!--var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';-->
+                        <!--if (!d.getElementById(id)) {-->
+                            <!--js = d.createElement(s);-->
+                            <!--js.id = id;-->
+                            <!--js.src = p + '://platform.twitter.com/widgets.js';-->
+                            <!--fjs.parentNode.insertBefore(js, fjs);-->
+                        <!--}-->
+                    <!--}(document, 'script', 'twitter-wjs');</script>-->
+                <!--</li>&lt;!&ndash;//twitter-follow&ndash;&gt;-->
+                <!--<li class="twitter-tweet">-->
+                    <!--<a href="https://twitter.com/share" class="twitter-share-button" data-via="3rdwave_themes"-->
+                       <!--data-hashtags="bootstrap">Tweet</a>-->
+                    <!--<script>!function (d, s, id) {-->
+                        <!--var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';-->
+                        <!--if (!d.getElementById(id)) {-->
+                            <!--js = d.createElement(s);-->
+                            <!--js.id = id;-->
+                            <!--js.src = p + '://platform.twitter.com/widgets.js';-->
+                            <!--fjs.parentNode.insertBefore(js, fjs);-->
+                        <!--}-->
+                    <!--}(document, 'script', 'twitter-wjs');</script>-->
+                <!--</li>&lt;!&ndash;//twitter-tweet&ndash;&gt;-->
+                <!--<li class="facebook-like">-->
+                    <!--<div class="fb-like" data-href="http://themes.3rdwavemedia.com/" data-layout="button_count"-->
+                         <!--data-action="like" data-show-faces="false" data-share="true"></div>-->
+                <!--</li>&lt;!&ndash;//facebook-like&ndash;&gt;-->
+                <!--&lt;!&ndash;// Generate github buttons: https://github.com/mdo/github-buttons &ndash;&gt;-->
+                <!--<li class="github-star">-->
+                    <!--<iframe src="http://ghbtns.com/github-btn.html?user=mdo&repo=github-buttons&type=watch&count=true"-->
+                            <!--allowtransparency="true" frameborder="0" scrolling="0" width="110" height="20"></iframe>-->
+                <!--</li>-->
+                <!--<li class="github-fork">-->
+                    <!--<iframe src="http://ghbtns.com/github-btn.html?user=mdo&repo=github-buttons&type=fork"-->
+                            <!--allowtransparency="true" frameborder="0" scrolling="0" width="53" height="20"></iframe>-->
+                <!--</li>-->
+                <!--&lt;!&ndash;//-->
+                <!--<li class="github-follow"><iframe src="http://ghbtns.com/github-btn.html?user=mdo&type=follow&count=true"-->
+<!--allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"></iframe></li>-->
+                <!--&ndash;&gt;-->
+            <!--</ul>-->
+        <!--</div>-->
+    <!--</div>-->
 </section><!--//promo-->
 
 <!-- ******ABOUT****** -->
 <section id="about" class="about section">
     <div class="container">
-        <h2 class="title text-center">What is devAid?</h2>
-        <p class="intro text-center">Explain your project in detail. Ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
-            in voluptate.</p>
+        <h2 class="title text-center">What is laravel-ng-ts?</h2>
+        <p class="intro text-center">laravel-ng-ts is an attempt to make a good starting point for developers who want to use Angular 1.5 and Laravel 5.2.
+            Since Angular 2 is coming in the near future this project is aiming to make the transition to Angular 2 a bit easier with typescript integration and custom decorators that use a similar syntax that Angular 2 is using..</p>
         <div class="row">
             <div class="item col-md-4 col-sm-6 col-xs-12">
                 <div class="icon-holder">
@@ -195,9 +185,7 @@ allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"><
                 </div>
                 <div class="content">
                     <h3 class="sub-title">Designed for developers</h3>
-                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the
-                        icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/"
-                                                         target="_blank">FontAwesome</a> icons available.</p>
+                    <p>This starter is here to make the scaffolding and setup of a base skeleton for a web application easy and very fast</p>
                 </div><!--//content-->
             </div><!--//item-->
             <div class="item col-md-4 col-sm-6 col-xs-12">
@@ -206,32 +194,26 @@ allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"><
                 </div>
                 <div class="content">
                     <h3 class="sub-title">Time saver</h3>
-                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the
-                        icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/"
-                                                         target="_blank">FontAwesome</a> icons available.</p>
+                    <p>Saves you time by providing generators for basic classes and files so you don't have to write boilerplate code </p>
                 </div><!--//content-->
             </div><!--//item-->
             <div class="item col-md-4 col-sm-6 col-xs-12">
                 <div class="icon-holder">
-                    <i class="fa fa-crosshairs"></i>
+                    <i class="fa fa-gears"></i>
                 </div>
                 <div class="content">
-                    <h3 class="sub-title">UX-centred</h3>
-                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the
-                        icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/"
-                                                         target="_blank">FontAwesome</a> icons available.</p>
+                    <h3 class="sub-title">Pre Configured </h3>
+                    <p>Laravel-ng-ts is pre-configured with JWT, API, Template cashing, Sattelizer and Gulp tasks so that you can start your implementation immediately.</p>
                 </div><!--//content-->
             </div><!--//item-->
             <div class="clearfix visible-md"></div>
             <div class="item col-md-4 col-sm-6 col-xs-12">
                 <div class="icon-holder">
-                    <i class="fa fa-tablet"></i>
+                    <i class="fa fa-refresh"></i>
                 </div>
                 <div class="content">
-                    <h3 class="sub-title">Mobile-friendly</h3>
-                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the
-                        icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/"
-                                                         target="_blank">FontAwesome</a> icons available.</p>
+                    <h3 class="sub-title">Live reload</h3>
+                    <p>This starter has live reload so you can view the changes that you write in real time and you don have to restart the server</p>
                 </div><!--//content-->
             </div><!--//item-->
             <div class="item col-md-4 col-sm-6 col-xs-12">
@@ -239,21 +221,17 @@ allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"><
                     <i class="fa fa-code"></i>
                 </div>
                 <div class="content">
-                    <h3 class="sub-title">Easy to customise</h3>
-                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the
-                        icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/"
-                                                         target="_blank">FontAwesome</a> icons available.</p>
+                    <h3 class="sub-title">Bower dependencies</h3>
+                    <p>Laravel-ng-ts is configured to automatically load bower dependencies and concatenate them for you to a single .css and .js file</p>
                 </div><!--//content-->
             </div><!--//item-->
             <div class="item col-md-4 col-sm-6 col-xs-12">
                 <div class="icon-holder">
-                    <i class="fa fa-coffee"></i>
+                    <i class="fa fa-css3"></i>
                 </div>
                 <div class="content">
-                    <h3 class="sub-title">LESS files included</h3>
-                    <p>Outline a benefit here. Tell users what your plugin/software can do for them. You can change the
-                        icon above to any of the 400+ <a href="http://fortawesome.github.io/Font-Awesome/icons/"
-                                                         target="_blank">FontAwesome</a> icons available.</p>
+                    <h3 class="sub-title">Sass compiler</h3>
+                    <p>Sass compiler is pre configured and it will detect all the .scss files and compile them to a single .css file .</p>
                 </div><!--//content-->
             </div><!--//item-->
         </div><!--//row-->
@@ -265,98 +243,208 @@ allowtransparency="true" frameborder="0" scrolling="0" width="165" height="20"><
     <div class="container text-center">
         <h2 class="title">Features</h2>
         <ul class="feature-list list-unstyled">
-            <li><i class="fa fa-check"></i> Fully responsive</li>
-            <li><i class="fa fa-check"></i> HTML5 + CSS3</li>
-            <li><i class="fa fa-check"></i> Built on <a href="http://getbootstrap.com/" target="_blank">Bootstrap
-                3.3</a></li>
-            <li><i class="fa fa-check"></i> 400+ FontAwesome icons</li>
-            <li><i class="fa fa-check"></i> 4 colour schemes</li>
-            <li><i class="fa fa-check"></i> LESS files included</li>
-            <li><i class="fa fa-check"></i> Compatible with all modern browsers</li>
+            <li><i class="fa fa-check"></i> Ready out of the box</li>
+            <li><i class="fa fa-check"></i> Generators using <a href="https://www.npmjs.com/package/generator-laravel-ng-ts" target="_blank">laravel-ng-ts Generator</a></li>
+            <li><i class="fa fa-check"></i> Angular 1.5 with custom decorators</li>
+            <li><i class="fa fa-check"></i> Typescript support</li>
+            <li><i class="fa fa-check"></i> Bower dependencies loader</li>
+            <li><i class="fa fa-check"></i> Automatic template cashing</li>
+            <li><i class="fa fa-check"></i> SASS compiler</li>
+            <li><i class="fa fa-check"></i> Karma and Jasmine for unit testing</li>
+            <li><i class="fa fa-check"></i> <a href="https://jwt.io/" target="_blank">JWT</a> out of the box</li>
+            <li><i class="fa fa-check"></i> <a href="https://github.com/sahat/satellizer" target="_blank">Satellizer</a> pre-configured to work with JWT </li>
+            <li><i class="fa fa-check"></i> Models & Repositories for consuming the api</li>
         </ul>
     </div><!--//container-->
 </section><!--//features-->
 
 <!-- ******DOCS****** -->
 <section id="docs" class="docs section">
-    <div class="container">
-        <div class="docs-inner">
-            <h2 class="title text-center">Get Started</h2>
-            <div class="block">
-                <h3 class="sub-title text-center">HTML</h3>
-                <p><a href="http://prismjs.com/" target="_blank">PrismJS</a> is used as the syntax highlighter here.</p>
-                <p>Below are the details of the custom PrismJS build used in this template. You can <a
-                        href="http://prismjs.com/download.html" target="_blank">build your own version</a> via their
-                    website should you need to.</p>
-                <ul class="list-unstyled">
-                    <li><strong>Compression level:</strong> Minified</li>
-                    <li><strong>Theme:</strong> Okaidia</li>
-                    <li><strong>Languages:</strong> Markup, CSS, C-like, JavaScript, PHP and Python</li>
-                </ul>
-                <div class="code-block">
-                    <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
-                    <pre><code class="language-markup">
-    &ltp class="my-style"&gt
-      Hello World!
-    &lt/p&gt
+    <div class="container-fluid">
+        <h2 class="title text-center">Docs</h2>
+        <div class="row">
+            <div class="col-lg-1"></div>
+            <div class="col-lg-11">
+                <div class="tabs-left">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#folder_structure" data-toggle="tab"><i class="fa fa-folder"></i>  Folder Structure </a></li>
+                        <li><a href="#b" data-toggle="tab"><i  class="fa fa-at"></i>Component</a></li>
+                        <li><a href="#b" data-toggle="tab"><i  class="fa fa-at"></i>RouteConfig</a></li>
+                        <li><a href="#b" data-toggle="tab"><i  class="fa fa-at"></i>Service</a></li>
+                        <li><a href="#b" data-toggle="tab"><i  class="fa fa-at"></i>Inject</a></li>
+                        <li><a href="#b" data-toggle="tab"><i  class="fa fa-at"></i>Config</a></li>
+                        <li><a href="#b" data-toggle="tab"><i  class="fa fa-at"></i>Filter</a></li>
+                        <li><a href="#b" data-toggle="tab"><i  class="fa fa-at"></i>Run</a></li>
+                        <li><a href="#b" data-toggle="tab"><i  class="fa fa-at"></i>Describe</a></li>
+                        <li><a href="#b" data-toggle="tab"><i  class="fa fa-server"></i>Models & Resources</a></li>
+
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="folder_structure">
+                            <div class="docs-inner">
+                                <h2 class="title text-center">Folder Structure</h2>
+                                <div class="block">
+                                    <h3 class="sub-title text-center">Laravel</h3>
+                                    <p>The backend part of the starter has the same folder structure as all standard laravel applications</p>
+                                    <p>There are just some miner changes in the <code>resources/views</code> folder the <code>app/Http/Controllers</code> folder and <code>app/Htpp/routes.php</code></p>
+                                    <ul class="list-unstyled">
+                                        <li><strong>resources/views:</strong> index.blade.php</li>
+                                    </ul>
+                                    <div class="code-block">
+                                        <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
+                    <pre><code class="language-html">&lt;!doctype html&gt;
+&lt;html ng-app="app" ng-strict-di&gt;
+&lt;head&gt;
+    &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+
+    &lt;link rel="stylesheet" href="{!! elixir('css/vendor.css') !!}"&gt;
+    &lt;link rel="stylesheet" href="{!! elixir('css/app.css') !!}"&gt;
+    &lt;link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'&gt;
+
+    &lt;title&gt;Laravel Angular Typescript&lt;/title&gt;
+
+    &lt;!--[if lte IE 10]&gt;
+    &lt;script type="text/javascript"&gt;document.location.href = '/unsupported-browser'&lt;/script&gt;
+    &lt;![endif]--&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+&lt;div ui-view&gt;&lt;/div&gt;
+
+
+    &lt;script src="{!! elixir('js/vendor.js') !!}"&gt;&lt;/script&gt;
+    &lt;script src="{!! elixir('js/templates.js') !!}"&gt;&lt;/script&gt;
+    &lt;script src="{!! elixir('js/app.js') !!}"&gt;&lt;/script&gt;
+
+    {{--livereload--}}
+    @if ( env('APP_ENV') === 'local' )
+    &lt;script type="text/javascript"&gt;
+        document.write('&lt;script src="'+ location.protocol + '//' + (location.host.split(':')[0] || 'localhost') +':35729/livereload.js?snipver=1" type="text/javascript"&gt;&lt;\/script&gt;')
+    &lt;/script&gt;
+    @endif
+&lt;/body&gt;
+&lt;/html&gt;
                      </code></pre>
-                </div><!--//code-block-->
-            </div><!--//block-->
+                                    </div><!--//code-block-->
+                                    <p>This html file is the only file that will be returned from the server, all other views are going to be saved in the <code>$templateCashe</code>
+                                        of the angular application</p>
+                                    <p>All the bower dependencies will be loaded in the <code>css/vendor.css</code> and <code>js/vendor.js</code> files </p>
+                                    <p>All your custom scss and the angular app (typescript) will be loaded in  <code>css/app.css</code> and <code>js/app.js</code> files </p>
+                                    <p>The templates used by <code>$templateCashe</code> will be loaded in <code>js/templates.js</code> </p>
+                                </div><!--//block-->
 
-            <div class="block">
-                <h3 class="sub-title text-center">CSS</h3>
-                <p>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies
-                    nisi. Nam eget dui. Etiam rhoncus.</p>
+                                <div class="block">
+                                    <h3 class="sub-title text-center">AngularController</h3>
+                                    <p>This controller is used to bootstrap the application</p>
+                                    <ul class="list-unstyled">
+                                        <li><strong>app/Htpp/Controllers:</strong> AngularController.php</li>
+                                    </ul>
+                                    <div class="code-block"><pre>
+    <code class="language-php">
+ &lt;?php
 
-                <div class="code-block">
-                    <!--//Use Prismjs - http://prismjs.com/index.html#basic-usage -->
-                    <pre>
-    <code class="language-css">
-    /*   
-     * Template Name: devAid - Responsive Website Template for developers
-     * Version: 1.1
-     * Author: Xiaoying Riley at 3rd Wave Media
-     * Website: http://themes.3rdwavemedia.com/
-     * Twitter: @3rdwave_themes
-    */
-    body {
-      font-family: 'Lato', arial, sans-serif;
-      color: #444444;
-      font-size: 16px;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+namespace App\Http\Controllers;
+
+class AngularController extends Controller
+{
+    public function serveApp()
+    {
+        return view('index');
     }
+
+    public function unsupported()
+    {
+        return view('unsupported_browser');
+    }
+}
     </code></pre>
-                </div><!--//code-block-->
-            </div><!--//block-->
+                                    </div><!--//code-block-->
+                                </div><!--//block-->
 
-            <div class="block">
-                <h3 class="sub-title text-center">JavaScript</h3>
-                <p>Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies
-                    nisi. Nam eget dui. Etiam rhoncus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit ligula
-                    eget dolor.</p>
-                <div class="code-block">
-                    <pre><code class="language-javascript">
-    if( awesome ){
-        console.log('This is Awesome');
-    }else{
-        $('body').addClass('give-me-awesome');
-    }
+                                <div class="block">
+                                    <h3 class="sub-title text-center">Angular</h3>
+                                    <p>All the frontend login is stored in the <code>client</code> folder.</p>
+                                    <ul class="list-unstyled">
+                                        <li><strong>client:</strong></li>
+                                    </ul>
+                                    <div class="code-block">
+                    <pre><code class="language-markdown">
+client/
+    |- app/                                      --> source code folder
+    |   |- components/                              --> angular components
+    |   |- config/                                  --> angular config
+    |   |- constants/                               --> angular constants
+    |   |- core/                                    --> core files(config,run,core-services etc.)
+    |   |   |- config/                                  --> core configurations folder
+    |   |   |   |- core.config.ts                           --> some necessary configurations
+    |   |   |   |- loading-bar.config.ts                    --> loading bar configurations
+    |   |   |   |- satellizer.config.ts                     --> satellizer cofigurations
+    |   |   |- constants/                               --> core constants folder
+    |   |   |   |- core.constant.ts                         --> some necessary configurations
+    |   |   |- models/                                  --> core models folder
+    |   |   |   |- auth.model.ts                            --> login and register user models
+    |   |   |   |- base.model.ts                            --> base model that all resource models inherit
+    |   |   |- resources/                               --> core resources folder
+    |   |   |   |- base.resource.ts                         --> base resource that all resources inherit
+    |   |   |- run/                                     --> core run configurations folder
+    |   |   |   |- core.run.ts                         --> base resource that all resources inherit
+    |   |   |- services/                                --> core services
+    |   |   |   |- api.service.ts                         --> setup restangular api to work with jwt and our api
+    |   |   |   |- auth.service.ts                        --> authentication service to handle user session, login, logout, register
+    |   |- models/                                  --> models used by the resources to get objects from the api
+    |   |- resources/                               --> resources to comunicate with the api
+    |   |- routes/                                  --> app routes
+    |   |- run/                                     --> app run
+    |   |- services/                                --> app services
+    |   |- app.decorators.ts                        --> app decorators
+    |   |- app.main.ts                              --> app main file
+    |- fonts/                                    -->fonts
+    |- images/                                   -->images
                     </code></pre>
-                </div><!--//code-block-->
-            </div><!--//block-->
-            <div class="block">
-                <h3 class="sub-title text-center">Full Documentation</h3>
-                <p>If your documentation is very long you can host the full docs page (including FAQ etc) on GitHub and
-                    provide a Call to Action button below to direct users there.</p>
-                <p class="text-center">
-                    <a class="btn btn-cta-primary" href="https://github.com/xriley/devAid-Theme" target="_blank">More on
-                        GitHub</a>
-                </p>
-            </div><!--//block-->
+                                    </div><!--//code-block-->
+                                </div><!--//block-->
+                                <div class="block">
+                                    <h3 class="sub-title text-center">Full Documentation</h3>
+                                    <p>If your documentation is very long you can host the full docs page (including FAQ etc) on GitHub and
+                                        provide a Call to Action button below to direct users there.</p>
+                                    <p class="text-center">
+                                        <a class="btn btn-cta-primary" href="https://github.com/xriley/devAid-Theme" target="_blank">More on
+                                            GitHub</a>
+                                    </p>
+                                </div><!--//block-->
 
-        </div><!--//docs-inner-->
-    </div><!--//container-->
+                            </div><!--//docs-inner-->
+                        </div>
+                        <div class="tab-pane" id="b">
+                            <h3>What's your Favorite?</h3>
+                            <ul class="list-group pull-left">
+                                <li class="list-group-item">
+                                    <h4>Crystals &nbsp; &nbsp;<span class="badge pull-right">100%</span></h4>
+                                </li>
+                                <li class="list-group-item">
+                                    <h4>Healing &nbsp; &nbsp;<span class="badge pull-right">90%</span></h4>
+                                </li>
+                                <li class="list-group-item">
+                                    <h4>Exploring &nbsp; &nbsp;<span class="badge pull-right">78%</span></h4>
+                                </li>
+                                <li class="list-group-item">
+                                    <h4>QiGong &nbsp; &nbsp;<span class="badge pull-right">83%</span></h4>
+                                </li>
+                                <li class="list-group-item">
+                                    <h4>Myself &nbsp; &nbsp;<span class="badge pull-right">100%</span>
+                                    </h4></li>
+                            </ul>
+                        </div>
+                        <div class="tab-pane" id="c">CCCCThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+                        <div class="tab-pane" id="d">DDDDDSecondo sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan. Aliquam in felis sit amet augue.</div>
+                        <div class="tab-pane" id="e">EEEEEThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+                        <div class="tab-pane" id="f">FFFFFFThirdamuno, ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate. Quisque mauris augue, molestie tincidunt condimentum vitae.</div>
+                    </div><!-- /tab-content -->
+                </div><!-- /tabbable -->
+            </div><!-- /col -->
+        </div><!-- /row -->
+    </div><!-- /container -->
 </section><!--//features-->
 
 <!-- ******LICENSE****** -->

@@ -1,0 +1,51 @@
+.tabs-left {
+    margin-top: 3rem;
+}
+
+.nav-tabs {
+    float: left;
+    border-bottom: 0;
+}
+.nav-tabs li {
+    float: none;
+    font-size: larger;
+    margin: 0;
+}
+.nav-tabs li a {
+    margin-right: 0;
+    border: 0;
+    background-color: white;
+}
+.nav-tabs li a:hover {
+    color: #666;
+}
+.nav-tabs .glyphicon {
+}
+.nav-tabs .active .glyphicon {
+}
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+    border: 0;
+}
+
+.tab-content {
+    margin-left: 45px;
+}
+.tab-content .tab-pane {
+    display: none;
+    padding: 1.6rem;
+    overflow-y: auto;
+}
+.tab-content .active {
+    display: block;
+}
+
+.list-group {
+    width: 100%;
+}
+.list-group .list-group-item {
+    height: 50px;
+}
+.list-group .list-group-item h4, .list-group .list-group-item span {
+    line-height: 11px;
+}
